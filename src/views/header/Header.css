@@ -6,14 +6,13 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    border-bottom: 1px solid black;
 }
 
 .header-link {
     text-decoration: none;
     color: #fff;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0 1rem;
-    padding: 1rem;
+    margin: 0 20px;
+    padding: 10px;
     transition: all 0.2s ease-in-out;
 }
