@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { NavLink } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
 
   return (
     <div className="header">
-      <div>HEADER</div>
+      <div className='header-link'><NavLink to="/">Home</NavLink></div>
+      <div className='header-link'><NavLink to="/character">Character</NavLink></div>
     </div>
   )
 }
