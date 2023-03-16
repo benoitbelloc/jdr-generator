@@ -20,7 +20,8 @@
                 "dexterity": 14,
                 "charism": 8
             },
-            "weapons": ["knife", "shield", "sword"]
+            "weapons": ["knife", "shield", "sword"],
+            "description": "Name is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
         }
     ]
   }
