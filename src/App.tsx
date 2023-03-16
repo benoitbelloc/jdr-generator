@@ -1,5 +1,5 @@
 import './App.css'
-import Header from './views/header/Header'
+import Header from './views/main-content/MainContent'
 import Router from './router/Router'
 
 function App() {
@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router />
     </div>
   )
 }

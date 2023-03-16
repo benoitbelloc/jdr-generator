@@ -1,17 +1,7 @@
-function Home() {
-
-  const test = fetch('http://localhost:3000/characters').then((response) => {
-    return response.json()
-  }).then((data) => {
-    console.log(data);
-  }).catch((error) => {
-    console.log(error);
-  })
-    
+function Home() {    
 
   return (
-    <div className="character">
-      <h1>Liste des persos</h1>
+    <div className="character" style={{width: '90%', height: '90%'}}>
 
     </div>
   )

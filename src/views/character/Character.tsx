@@ -1,9 +1,10 @@
 import './Character.css'
+import { Character as CharacterType } from '../main-content/MainContent';
 
-function Character() {
+function Character(props: {list: CharacterType[]}) {  
 
   return (
-    <div className="character">
+    <div className="character" style={{width: '90%', height: '90%'}}>
       <div className="main-data">
         <div className='avatar-stats'></div>
         <div className='infos'></div>

@@ -1,14 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
+import { Character as CharacterType } from '../views/main-content/MainContent';
 import Character from '../views/character/Character';
 import Home from '../views/home/Home';
 
-function Router() {
-
+function Router(props: {list: CharacterType[]}) {
   return (
     <div className="Router">
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/character" element={<Character />} />
+            <Route path="/character/:id" element={<Character list={props.list} />} />
         
         </Routes>
     </div>
