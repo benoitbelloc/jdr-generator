@@ -1,0 +1,26 @@
+{
+    "characters": [
+        { 
+            "id": 1,
+            "infos": {
+                "name": "Name",
+                "type": "human",
+                "class": "knight"
+            },
+            "stats": {
+                "level": 1,
+                "hp": 35,
+                "mp": 5,
+                "atk": 15,
+                "def": 12
+            },
+            "talents": {
+                "physical": 18,
+                "intellect": 10,
+                "dexterity": 14,
+                "charism": 8
+            },
+            "weapons": ["knife", "shield", "sword"]
+        }
+    ]
+  }
