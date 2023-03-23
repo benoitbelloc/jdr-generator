@@ -1,16 +1,19 @@
-.cardMedia{
-    width: 100%;
-    border-color: black;
+.cards{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10%;
+    margin-right: 5%;
+    width: 30%;
 }
 
-.card{
-    width: 25%;
+.cardImage{
+    width: 100%;
     height: 100%;
-    margin: 0 auto;
-    margin-top: 5%;
-    margin: 5%
 }
 
-img{
-    width: 100%;
+.cardMedia{
+    text-decoration: none;
+    color: black;
 }
