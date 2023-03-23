@@ -18,12 +18,12 @@ function Home() {
   }, [id]);
 
   return (
-    <div className="character" style={{width: '90%', height: '90%'}}>
+    <div className="cards-container">
       
         {characters.map((item: CharacterType, index: number)=>{
           return (
-            <div key={index}>
-              <Card className="cards">
+            <div key={index} className="card">
+              <Card>
                 <CardActionArea>
                       <CardMedia className="cardMedia" component={Link} to={"/character/" + item.id}>
                         <img className="cardImage" src={item.infos.avatar} />
