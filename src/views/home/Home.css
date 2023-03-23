@@ -1,0 +1,16 @@
+.cardMedia{
+    width: 100%;
+    border-color: black;
+}
+
+.card{
+    width: 25%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin: 5%
+}
+
+img{
+    width: 100%;
+}

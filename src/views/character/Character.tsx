@@ -16,7 +16,6 @@ function Character(props: {list: CharacterType[]}) {
           <div className='competences-2'></div>
         </div>
       </div>
-
     </div>
   )
 }
