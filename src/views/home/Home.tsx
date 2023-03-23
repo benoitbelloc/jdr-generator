@@ -4,14 +4,23 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea, Divider } from '@mui/material';
 import './Home.css';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import React from 'react';
+import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 
-function Home(props: {list: CharacterType[]}) {    
+function Home() {
+  const location = useLocation();
+  const id = location.pathname.split('/')[2];
+  const { characters, getAllCharacters } = React.useContext(CharactersContext);  
+
+  React.useEffect(() => {
+    getAllCharacters();
+  }, [id]);
 
   return (
     <div className="character" style={{width: '90%', height: '90%'}}>
       
-        {props.list.map((item: CharacterType, index: number)=>{
+        {characters.map((item: CharacterType, index: number)=>{
           return (
             <div key={index}>
               <Card className="cards">

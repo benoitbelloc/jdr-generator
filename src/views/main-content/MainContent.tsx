@@ -17,7 +17,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Router from '../../router/Router';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 
 export type Character = {
   id: number,
@@ -116,19 +117,15 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function MainContent() {
+  const location = useLocation();
+  const id = location.pathname.split('/')[2];
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [list, setList] = React.useState<Character[] | []>([]);
+  const { characters, getAllCharacters } = React.useContext(CharactersContext);
 
   React.useEffect(() => {
-    fetch('http://localhost:3000/characters').then((response) => {
-      return response.json()
-    }).then((data) => {
-      setList(data)
-    }).catch((error) => {
-      console.log(error);
-    })
-  }, [])
+    getAllCharacters();
+  }, [id]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -168,8 +165,8 @@ export default function MainContent() {
         </DrawerHeader>
         <Divider />
         <List>
-          {list.map((item) => (
-            <ListItem key={item.id} disablePadding sx={{ display: 'block', color: 'black' }} component={Link} to={"/character/" + item.id}>
+          {characters ? characters.map((item: Character) => (
+            <ListItem key={item.id} disablePadding sx={{ display: 'block', color: 'black' }} component={Link} to={"/character/" + item.id} >
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -189,12 +186,12 @@ export default function MainContent() {
                 <ListItemText primary={item.infos.name} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-          ))}
+          )) : null}
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-          <Router list={list} />
+        <Router />
       </Box>
     </Box>
   );
