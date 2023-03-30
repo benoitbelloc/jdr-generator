@@ -120,46 +120,25 @@ export default function MainContent() {
   const location = useLocation();
   const id = location.pathname.split('/')[2];
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
   const { characters, getAllCharacters } = React.useContext(CharactersContext);
 
   React.useEffect(() => {
     getAllCharacters();
   }, [id]);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{backgroundColor: 'white', color: 'black'}}>
+      <AppBar position="fixed" sx={{backgroundColor: 'white', color: 'black'}}>
         <Toolbar component={Link} to='/' sx={{color: 'black', textDecoration: 'none'}}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" noWrap component="div">
             JDR-Generator
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent">
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
@@ -170,20 +149,20 @@ export default function MainContent() {
               <ListItemButton
                 sx={{
                   minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
+                  justifyContent: 'center',
                   px: 2.5,
                 }}
               >
                 <ListItemIcon
                   sx={{
                     minWidth: 0,
-                    mr: open ? 3 : 'auto',
+                    mr: 'auto',
                     justifyContent: 'center',
                   }}
                 >
                   <img src={item.infos.avatar} alt={"Image de " + item.infos.name} height={50} width={50} style={{borderRadius: '50%'}} />
                 </ListItemIcon>
-                <ListItemText primary={item.infos.name} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={item.infos.name} sx={{ opacity: 0 }} />
               </ListItemButton>
             </ListItem>
           )) : null}

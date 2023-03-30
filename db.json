@@ -29,24 +29,24 @@
             "infos": {
                 "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgfAOQwDPH5dFMc91Cx20tLUQdMBVJdzDpg36zml-J6NaLQEJp8g190BZcqIPqZObwD1E&usqp=CAU",
                 "name": "Perso",
-                "type": "human",
-                "class": "knight"
+                "type": "elf",
+                "class": "mage"
             },
             "stats": {
                 "level": 1,
-                "hp": 35,
-                "mp": 5,
-                "atk": 15,
-                "def": 12
+                "hp": 20,
+                "mp": 30,
+                "atk": 14,
+                "def": 14
             },
             "talents": {
-                "physical": 18,
-                "intellect": 10,
-                "dexterity": 14,
-                "charism": 8
+                "physical": 6,
+                "intellect": 16,
+                "dexterity": 12,
+                "charism": 18
             },
-            "weapons": ["knife", "shield", "sword"],
-            "description": "Name is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
+            "weapons": ["staff", "book", "dagger"],
+            "description": "Name is an elf mage. He is a good guy. But he is not a hero. His favorite food is potato chips. He loves his brother. At night, he likes to go outside and look at the stars. It reminds him of his childhood, when his mother used to tell him stories about the stars. It was a long time ago."
         }
     ]
   }
