@@ -45,6 +45,11 @@ export type Character = {
   description: string,
 }
 
+export type User = {
+  id: number,
+  username: string
+}
+
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -139,7 +144,7 @@ export default function MainContent() {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open} sx={{backgroundColor: 'white', color: 'black'}}>
-        <Toolbar component={Link} to='/' sx={{color: 'black', textDecoration: 'none'}}>
+        <Toolbar component={Link} to='/Home' sx={{color: 'black', textDecoration: 'none'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"

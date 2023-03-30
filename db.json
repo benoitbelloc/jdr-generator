@@ -1,52 +1,70 @@
 {
-    "characters": [
-        { 
-            "id": 1,
-            "infos": {
-                "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
-                "name": "Name",
-                "type": "human",
-                "class": "knight"
-            },
-            "stats": {
-                "level": 1,
-                "hp": 35,
-                "mp": 5,
-                "atk": 15,
-                "def": 12
-            },
-            "talents": {
-                "physical": 18,
-                "intellect": 10,
-                "dexterity": 14,
-                "charism": 8
-            },
-            "weapons": ["knife", "shield", "sword"],
-            "description": "Name is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
-        },
-        { 
-            "id": 2,
-            "infos": {
-                "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgfAOQwDPH5dFMc91Cx20tLUQdMBVJdzDpg36zml-J6NaLQEJp8g190BZcqIPqZObwD1E&usqp=CAU",
-                "name": "Perso",
-                "type": "human",
-                "class": "knight"
-            },
-            "stats": {
-                "level": 1,
-                "hp": 35,
-                "mp": 5,
-                "atk": 15,
-                "def": 12
-            },
-            "talents": {
-                "physical": 18,
-                "intellect": 10,
-                "dexterity": 14,
-                "charism": 8
-            },
-            "weapons": ["knife", "shield", "sword"],
-            "description": "Name is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
-        }
-    ]
-  }
+  "characters": [
+    {
+      "id": 1,
+      "infos": {
+        "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "name": "Name",
+        "type": "human",
+        "class": "knight"
+      },
+      "stats": {
+        "level": 1,
+        "hp": 35,
+        "mp": 5,
+        "atk": 15,
+        "def": 12
+      },
+      "talents": {
+        "physical": 18,
+        "intellect": 10,
+        "dexterity": 14,
+        "charism": 8
+      },
+      "weapons": [
+        "knife",
+        "shield",
+        "sword"
+      ],
+      "description": "Name is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
+    },
+    {
+      "id": 2,
+      "infos": {
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgfAOQwDPH5dFMc91Cx20tLUQdMBVJdzDpg36zml-J6NaLQEJp8g190BZcqIPqZObwD1E&usqp=CAU",
+        "name": "Perso",
+        "type": "human",
+        "class": "knight"
+      },
+      "stats": {
+        "level": 1,
+        "hp": 35,
+        "mp": 5,
+        "atk": 15,
+        "def": 12
+      },
+      "talents": {
+        "physical": 18,
+        "intellect": 10,
+        "dexterity": 14,
+        "charism": 8
+      },
+      "weapons": [
+        "knife",
+        "shield",
+        "sword"
+      ],
+      "description": "Name is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "bob"
+    },
+    {
+      "username": "bloup",
+      "id": 2
+    }
+  ]
+}

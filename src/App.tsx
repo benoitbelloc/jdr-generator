@@ -2,14 +2,17 @@ import './App.css'
 import Header from './views/main-content/MainContent'
 import Router from './router/Router'
 import CharactersProvider from './providers/characters-provider/CharactersProvider'
+import UsersProvider from './providers/characters-provider/UsersProvider'
 
 function App() {
 
   return (
     <div className="App">
-      <CharactersProvider>
-        <Header />
-      </CharactersProvider>
+      <UsersProvider>
+        <CharactersProvider>
+          <Header />
+        </CharactersProvider>
+      </UsersProvider>
     </div>
   )
 }
