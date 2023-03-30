@@ -31,7 +31,7 @@ function UsersProvider ({children}: {children: React.ReactNode}){
                 alert("Une erreur est survenue")
             }
         })
-        .then(() => navigate("/Home"))
+        .then(() => navigate("/home"))
         .catch((error)=>{
             console.log(error);
         })

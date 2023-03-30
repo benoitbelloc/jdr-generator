@@ -8,7 +8,7 @@ export default function Router() {
     <div className="Router">
         <Routes>
             <Route path="/" element={<Register />}/>
-            <Route path="/Home" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/character/:id" element={<Character />} />
         </Routes>
     </div>
