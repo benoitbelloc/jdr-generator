@@ -7,19 +7,15 @@ import './Home.css';
 import { Link, useLocation } from "react-router-dom";
 import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
-import { UsersContext } from '../../providers/characters-provider/UsersProvider';
 
 function Home() {
   const location = useLocation();
   const id = location.pathname.split('/')[2];
-  const { characters, getAllCharacters } = React.useContext(CharactersContext);
-  const {user} = React.useContext(UsersContext);  
+  const { characters, getAllCharacters } = React.useContext(CharactersContext);  
 
   React.useEffect(() => {
     getAllCharacters();
-    console.log(user);
-    
-  }, [id, user]);
+  }, [id]);
 
   return (
     <div className="cards-container">

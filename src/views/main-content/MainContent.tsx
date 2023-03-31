@@ -134,16 +134,15 @@ export default function MainContent() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{backgroundColor: 'white', color: 'black'}}>
+      <AppBar position="fixed" sx={{backgroundColor: 'white', color: 'black'}}>
         <Toolbar component={Link} to='/Home' sx={{color: 'black', textDecoration: 'none'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
             edge="start"
             sx={{
               marginRight: 5,
-              ...(open && { display: 'none' }),
+              ...({ display: 'none' }),
             }}
           >
             <MenuIcon />
