@@ -17,30 +17,37 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Router from '../../router/Router';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+
+export type CharacterInfos = {
+    avatar: string,
+    name: string,
+    type: string,
+    class: string
+}
+
+export type CharacterStats = {
+  level: number,
+  hp: number,
+  mp: number,
+  atk: number,
+  def: number,
+}
+
+export type CharacterTalents = {
+  physical: number,
+  intellect: number,
+  dexterity: number,
+  charism: number,
+}
 
 export type Character = {
-  id: number,
-  infos: {
-      avatar: string,
-      name: string,
-      typestring: string,
-      class: string
-  },
-  stats: {
-      level: number,
-      hp: number,
-      mp: number,
-      atk: number,
-      def: number,
-  },
-  talents: {
-      physical: number,
-      intellect: number,
-      dexterity: number,
-      charism: number,
-  },
+  id?: number,
+  infos: CharacterInfos,
+  stats: CharacterStats,
+  talents: CharacterTalents,
   weapons: string[],
   description: string,
 }
@@ -122,20 +129,28 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function MainContent() {
+  const navigate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
   const theme = useTheme();
-  const { characters, getAllCharacters } = React.useContext(CharactersContext);
+  const { characters, getAllCharacters, createOneCharacter } = React.useContext(CharactersContext);
 
   React.useEffect(() => {
     getAllCharacters();
   }, [id]);
 
+  const createCharacter = () => {
+    createOneCharacter();
+    setTimeout(() => {
+      navigate('/character/' + (characters.length + 1));
+    }, 100);
+  }
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{backgroundColor: 'white', color: 'black'}}>
-        <Toolbar component={Link} to='/Home' sx={{color: 'black', textDecoration: 'none'}}>
+        <Toolbar component={Link} to='/home' sx={{color: 'black', textDecoration: 'none'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -161,7 +176,7 @@ export default function MainContent() {
         <Divider />
         <List>
           {characters ? characters.map((item: Character) => (
-            <ListItem key={item.id} disablePadding sx={{ display: 'block', color: 'black' }} component={Link} to={"/character/" + item.id} >
+            <ListItem key={item.id} disablePadding sx={{ display: 'block', color: 'black' }} component={Link} to={"/character/" + item.id}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -182,6 +197,25 @@ export default function MainContent() {
               </ListItemButton>
             </ListItem>
           )) : null}
+          <ListItem disablePadding sx={{ display: 'block', color: 'black', fontSize:'60px', marginLeft: '0' }} onClick={createCharacter}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <AddCircleOutlineIcon fontSize='inherit' />
+                </ListItemIcon>
+              </ListItemButton>
+            </ListItem>
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
