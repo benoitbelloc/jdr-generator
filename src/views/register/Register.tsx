@@ -3,7 +3,7 @@ import Router from '../../router/Router';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { User } from '../main-content/MainContent';
 import { Button } from '@mui/material';
-import { UsersContext } from '../../providers/characters-provider/UsersProvider';
+import { UsersContext } from '../../providers/users-provider/UsersProvider';
 
 function Register(){
     const [name, setName] = React.useState('')
