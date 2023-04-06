@@ -45,6 +45,7 @@ export type CharacterTalents = {
 
 export type Character = {
   id?: number,
+  userId?: number,
   infos: CharacterInfos,
   stats: CharacterStats,
   talents: CharacterTalents,
@@ -53,8 +54,10 @@ export type Character = {
 }
 
 export type User = {
+  [x: string]: any;
   id: number,
   username: string
+  characterId: number,
 }
 
 const drawerWidth = 240;

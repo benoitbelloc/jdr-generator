@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useNavigate } from "react-router-dom";
-import { User } from "../../views/main-content/MainContent";
+import { Character, User } from "../../views/main-content/MainContent";
 
 export const UsersContext = React.createContext<any>([]);
 
@@ -9,16 +9,14 @@ function UsersProvider ({children}: {children: React.ReactNode}){
     const [users, setUsers] = React.useState<User[]>([]);
     const [user, setUser] = React.useState<User | null>(null);
 
-    const login = (username: string) => {
-        fetch(`http://localhost:3000/users?username=${username}`)
-        .then((response)=>{
-            return response.json()
-        })
-        .then((data)=>{
+    const login = async (username: string) => {
+        try {
+            const response = await fetch(`http://localhost:3000/users?username=${username}`)
+            const data = await response.json();
             if (data.length === 1) {
-                setUser(data[0])
+                setUser(data[0]);
             } else if (data.length === 0) {
-                const response = fetch(`http://localhost:3000/users?username=${username}`, 
+                await fetch(`http://localhost:3000/users?username=${username}`, 
                 {
                     method: "POST",
                     headers: {
@@ -26,35 +24,39 @@ function UsersProvider ({children}: {children: React.ReactNode}){
                     },
                     body: JSON.stringify({username})
                 })
-                return response
-            } else { // cas où on en a plus de 1
-                alert("Une erreur est survenue")
+                const responseAfterCreate = await fetch(`http://localhost:3000/users?username=${username}`)
+                const dataAfterCreate = await responseAfterCreate.json();
+                setUser(dataAfterCreate[0]);
             }
-        })
-        .then(() => navigate("/home"))
-        .catch((error)=>{
+            navigate('/home');
+        } catch (error) {
             console.log(error);
-        })
+            
+        }
     }
 
-    const getUser = (id: string) => {
-        fetch(`http://localhost:3000/users/}`).then((response)=>{
-            return response.json()
-        }).then((data)=>{
+    const getUser = async (username: string) => {
+        try {
+            const response = await fetch(`http://localhost:3000/users?username=${username}}`)
+            const data = await response.json()
             setUser(data)
-        }).catch((error)=>{
+        } catch (error) {
             console.log(error);
-        })
+        }
     }
 
-    const getAllCharactersByUserId = (userId: string, characterId: string) => {
-        fetch(`http://localhost:3000/${userId}/${characterId}`).then((response)=>{
-            return response.json()
-        })
+    const getCharacterByUserId = async (characterId: string) => {
+        try {
+            const reponse = await fetch(`http://localhost:3000/users/users?charactersId=${characterId}`)
+            const data = await reponse.json()
+            setUser(data)
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (
-        <UsersContext.Provider value={{ login, user, getUser, getAllCharactersByUserId }}>
+        <UsersContext.Provider value={{ login, user, getUser, getCharacterByUserId }}>
             {children}
         </UsersContext.Provider>
     )

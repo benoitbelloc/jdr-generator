@@ -1,20 +1,22 @@
-import { Character as CharacterType } from '../main-content/MainContent';
+import { Character as CharacterType, User } from '../main-content/MainContent';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea, Divider } from '@mui/material';
+import { CardActionArea } from '@mui/material';
 import './Home.css';
 import { Link, useLocation } from "react-router-dom";
 import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
+import UsersProvider, { UsersContext } from '../../providers/users-provider/UsersProvider';
 
 function Home() {
   const location = useLocation();
   const id = location.pathname.split('/')[2];
-  const { characters, getAllCharacters } = React.useContext(CharactersContext);  
+  const { characters, getCharactersByUserId } = React.useContext(CharactersContext);  
+  const { user } = React.useContext(UsersContext);
 
   React.useEffect(() => {
-    getAllCharacters();
+    getCharactersByUserId(user.id);
   }, [id]);
 
   return (
