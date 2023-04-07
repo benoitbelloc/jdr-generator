@@ -4,7 +4,7 @@
       "id": 1,
       "userId": 1,
       "infos": {
-        "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+        "avatar": "https://kinsta.com/fr/wp-content/uploads/sites/4/2020/09/jpeg.jpg",
         "name": "Name",
         "type": "human",
         "class": "knight"
@@ -60,7 +60,7 @@
     },
     {
       "infos": {
-        "avatar": "https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg",
+        "avatar": "https://cdn-icons-png.flaticon.com/512/1205/1205647.png",
         "name": "Charles-Hubert",
         "type": "Sorcier",
         "class": "Ranger"
