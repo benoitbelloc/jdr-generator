@@ -183,7 +183,7 @@ export default function MainContent() {
         </DrawerHeader>
         <Divider />
         <List>
-          {characters ? characters.map((item: Character) => (
+          {characters && user ? characters.map((item: Character) => (
             <ListItem key={item.id} disablePadding sx={{ display: 'block', color: 'black' }} component={Link} to={"/character/" + item.id}>
               <ListItemButton
                 sx={{
@@ -205,7 +205,7 @@ export default function MainContent() {
               </ListItemButton>
             </ListItem>
           )) : null}
-          <ListItem disablePadding sx={{ display: 'block', color: 'black', fontSize:'60px', marginLeft: '0' }} onClick={createCharacter}>
+          {user && <ListItem disablePadding sx={{ display: 'block', color: 'black', fontSize:'60px', marginLeft: '0' }} onClick={createCharacter}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -223,7 +223,7 @@ export default function MainContent() {
                   <AddCircleOutlineIcon fontSize='inherit' />
                 </ListItemIcon>
               </ListItemButton>
-            </ListItem>
+            </ListItem>}
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

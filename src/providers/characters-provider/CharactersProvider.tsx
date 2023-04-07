@@ -1,7 +1,8 @@
 import React from "react";
 import { Character } from "../../views/main-content/MainContent";
+import { UsersContext } from "../users-provider/UsersProvider";
 
-const baseCharacter = {
+const baseCharacter: Character = {
     infos: {
         avatar: 'https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg',
         name: 'Name',
@@ -30,6 +31,7 @@ export const CharactersContext = React.createContext<any>([]);
 function CharactersProvider ({children}: {children: React.ReactNode}) {
     const [characters, setCharacters] = React.useState<Character[]>([]);
     const [character, setCharacter] = React.useState<Character | null>(null);
+    const {user} = React.useContext(UsersContext)  
 
     const getAllCharacters = async () => {
         try {
@@ -42,7 +44,6 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
     }
 
     const updateOneCharacter = async (characterData: Character) => {
-        console.log(characterData.id);
         try {
             await fetch(`http://localhost:3000/characters/${characterData.id}`, 
             {
@@ -82,6 +83,9 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
     }
 
     const createOneCharacter = async () => {
+        console.log(user.id);
+        if (!user.id) return alert('You must be logged in to create a character');
+        baseCharacter.userId = user.id;
         try {
             await fetch(`http://localhost:3000/characters`, 
             {
