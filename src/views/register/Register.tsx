@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Router from '../../router/Router';
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { User } from '../main-content/MainContent';
+import { useNavigate } from "react-router-dom";
 import { Button } from '@mui/material';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 

@@ -138,10 +138,7 @@ export default function MainContent() {
   const id = location.pathname.split('/')[2];
   const theme = useTheme();
   const { characters, getAllCharacters, createOneCharacter } = React.useContext(CharactersContext);
-  const {user, logout} = React.useContext(UsersContext)
-
-  console.log('user', user);
-  
+  const {user, logout} = React.useContext(UsersContext)  
 
   React.useEffect(() => {
     getAllCharacters();

@@ -1,9 +1,8 @@
 import './Character.css'
-import { Character as CharacterType, CharacterInfos, CharacterStats, CharacterTalents } from '../main-content/MainContent';
+import { CharacterInfos, CharacterStats, CharacterTalents } from '../main-content/MainContent';
 import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
-import { CircularProgress } from '@mui/material';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 function Character() {  
