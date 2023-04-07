@@ -6,14 +6,15 @@ export const UsersContext = React.createContext<any>([]);
 
 function UsersProvider ({children}: {children: React.ReactNode}){
     const navigate = useNavigate();
-    const [users, setUsers] = React.useState<User[]>([]);
     const [user, setUser] = React.useState<User | null>(null);
 
     const login = async (username: string) => {
         try {
             const response = await fetch(`http://localhost:3000/users?username=${username}`)
             const data = await response.json();
-            if (data.length === 1) {
+            if (data.length > 1) {
+                alert('There is more than one user with this name')
+            } else if (data.length === 1) {
                 setUser(data[0]);
             } else if (data.length === 0) {
                 await fetch(`http://localhost:3000/users?username=${username}`, 
@@ -33,6 +34,11 @@ function UsersProvider ({children}: {children: React.ReactNode}){
             console.log(error);
             
         }
+    }
+
+    const logout = () => {
+        setUser(null);
+        navigate('/');
     }
 
     const getUser = async (username: string) => {
@@ -56,7 +62,7 @@ function UsersProvider ({children}: {children: React.ReactNode}){
     }
 
     return (
-        <UsersContext.Provider value={{ login, user, getUser, getCharacterByUserId }}>
+        <UsersContext.Provider value={{ login, logout, user, getUser, getCharacterByUserId }}>
             {children}
         </UsersContext.Provider>
     )

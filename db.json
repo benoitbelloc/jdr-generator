@@ -17,7 +17,7 @@
         "def": 12
       },
       "talents": {
-        "physical": 18,
+        "physical": "18",
         "intellect": 10,
         "dexterity": 14,
         "charism": 8

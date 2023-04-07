@@ -20,6 +20,7 @@ import Router from '../../router/Router';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { UsersContext } from '../../providers/users-provider/UsersProvider';
 
 export type CharacterInfos = {
     avatar: string,
@@ -137,10 +138,14 @@ export default function MainContent() {
   const id = location.pathname.split('/')[2];
   const theme = useTheme();
   const { characters, getAllCharacters, createOneCharacter } = React.useContext(CharactersContext);
+  const {user, logout} = React.useContext(UsersContext)
+
+  console.log('user', user);
+  
 
   React.useEffect(() => {
     getAllCharacters();
-  }, [id]);
+  }, [id, user]);
 
   const createCharacter = () => {
     createOneCharacter();
@@ -153,7 +158,7 @@ export default function MainContent() {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{backgroundColor: 'white', color: 'black'}}>
-        <Toolbar component={Link} to='/home' sx={{color: 'black', textDecoration: 'none'}}>
+        <Toolbar sx={{color: 'black', textDecoration: 'none'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -165,9 +170,12 @@ export default function MainContent() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <a href="/home" style={{textDecoration: 'none', color: 'black'}}><Typography variant="h6" noWrap component="div">
             JDR-Generator
-          </Typography>
+          </Typography></a>
+          {user && <Typography variant="h6" noWrap component="div" style={{marginLeft: '50px'}} onClick={logout}>
+            Logout
+          </Typography>}
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent">

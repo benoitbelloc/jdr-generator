@@ -4,25 +4,26 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import './Home.css';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
-import UsersProvider, { UsersContext } from '../../providers/users-provider/UsersProvider';
+import { UsersContext } from '../../providers/users-provider/UsersProvider';
 
 function Home() {
+  const navivate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
   const { characters, getCharactersByUserId } = React.useContext(CharactersContext);  
-  const { user } = React.useContext(UsersContext);
+  const { user } = React.useContext(UsersContext);  
 
   React.useEffect(() => {
+    if (!user || user === null) return navivate('/');
     getCharactersByUserId(user.id);
-  }, [id]);
+  }, [id, user]);
 
   return (
     <div className="cards-container">
-      
-        {characters.map((item: CharacterType, index: number)=>{
+        {user && characters.map((item: CharacterType, index: number)=>{
           return (
             <div key={index} className="card">
               <Card>

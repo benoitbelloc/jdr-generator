@@ -6,12 +6,17 @@ import { Button } from '@mui/material';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 
 function Register(){
+    const navivate = useNavigate();
     const [name, setName] = React.useState('')
     const {user, login} = React.useContext(UsersContext)
 
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value)
     };
+
+    React.useEffect(() => {        
+        if (user && user !== null) navivate('/home');
+      }, [user]);
 
     const checkUser = () => {
         if (name !== '') {
