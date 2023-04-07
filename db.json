@@ -10,15 +10,15 @@
         "class": "knight"
       },
       "stats": {
-        "level": 1,
-        "hp": 35,
-        "mp": 5,
+        "level": "1",
+        "hp": "35",
+        "mp": "5",
         "atk": 15,
         "def": 12
       },
       "talents": {
-        "physical": "18",
-        "intellect": 10,
+        "physical": "20",
+        "intellect": "12",
         "dexterity": 14,
         "charism": 8
       },
@@ -61,25 +61,25 @@
     {
       "infos": {
         "avatar": "https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg",
-        "name": "Name",
-        "type": "Type",
-        "class": "Class"
+        "name": "Charles-Hubert",
+        "type": "Sorcier",
+        "class": "Ranger"
       },
       "stats": {
-        "level": 0,
-        "hp": 0,
-        "mp": 0,
-        "atk": 0,
-        "def": 0
+        "level": "1",
+        "hp": "1000",
+        "mp": "20",
+        "atk": "250",
+        "def": "800"
       },
       "talents": {
-        "physical": 0,
-        "intellect": 0,
-        "dexterity": 0,
-        "charism": 0
+        "physical": "13",
+        "intellect": "17",
+        "dexterity": "3",
+        "charism": "4"
       },
       "weapons": [],
-      "description": "",
+      "description": "Charles-Hubert est un sorcier avec des statistiques de tank.",
       "userId": 1,
       "id": 3
     }

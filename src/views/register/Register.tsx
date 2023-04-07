@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useNavigate } from "react-router-dom";
-import { Button } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 
 function Register(){
@@ -24,9 +24,22 @@ function Register(){
         }
     };
 
+    const validateWithEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            checkUser()
+        }
+    };
+
     return(
         <div>
-            <input type="text" onChange={changeValue} />
+            <TextField
+                id="outlined-required"
+                label="Pseudo"
+                size="small"
+                value={name}
+                onChange={changeValue}
+                onKeyUp={validateWithEnter}
+            />
             <Button variant="outlined" onClick={checkUser}>Submit</Button>
         </div>
     )
