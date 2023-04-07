@@ -16,11 +16,13 @@ function Character() {
   if (!character) getOneCharacter(id);
 
   React.useEffect(() => {
+    if (!user || user === null) return navigate('/');
     getOneCharacter(id)
-  }, [id])
+  }, [id, user])
 
   const changeValue = (event: any) => {
     const className = event.target.className;
+    const classList = event.target.classList;
     const name = event.target.name;
     const value = event.target.value;
     
@@ -38,12 +40,12 @@ function Character() {
         [name]: value
       }
       setCharacter({...character, talents: newTalents})
-    } else if (className === 'stats') {
+    } else if (classList.contains('stats')) {
       const newStats: CharacterStats = {
         ...character.stats,
         [name]: value
       }
-      setCharacter({...character, stats: newStats})
+      setCharacter({...character, stats: newStats})      
     }
   }
 
@@ -100,20 +102,19 @@ function Character() {
             <div className='stats-container'>
               <p className='stat'>
                 <span className='stat-name'>HP</span>
-                {/* <input id="stat-number" className='stats' type="number" name="hp" min="0" max="20" value={character.stats.hp} onChange={changeValue} onBlur={saveChange}></input> */}
-                <span className='stat-number'>{character.stats.hp}</span>
+                <input className='stats stat-number' type="number" name="hp" min="0" max="1000" value={character.stats.hp} onChange={changeValue} onBlur={saveChange}></input>
               </p>
               <p className='stat'>
                 <span className='stat-name'>MP</span>
-                <span className='stat-number'>{character.stats.mp}</span>
+                <input className='stats stat-number' type="number" name="mp" min="0" max="1000" value={character.stats.mp} onChange={changeValue} onBlur={saveChange}></input>
               </p>
               <p className='stat'>
                 <span className='stat-name'>ATK</span>
-                <span className='stat-number'>{character.stats.atk}</span>
+                <input className='stats stat-number' type="number" name="atk" min="0" max="1000" value={character.stats.atk} onChange={changeValue} onBlur={saveChange}></input>
               </p>
               <p className='stat'>
                 <span className='stat-name'>DEF</span>
-                <span className='stat-number'>{character.stats.def}</span>
+                <input className='stats stat-number' type="number" name="def" min="0" max="1000" value={character.stats.def} onChange={changeValue} onBlur={saveChange}></input>
               </p>
             </div>
           </div>
