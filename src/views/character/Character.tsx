@@ -5,8 +5,22 @@ import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
+import { Box, Button, Modal, TextField, Typography } from '@mui/material';
+
+const style = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 function Character() {  
+  const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
@@ -20,13 +34,13 @@ function Character() {
     getOneCharacter(id)
   }, [id, user])
 
-  const changeValue = (event: any) => {
-    const className = event.target.className;
-    const classList = event.target.classList;
+  const changeValue = (event: any) => {    
+    const className = event.target.className ? event.target.className : '';
+    const classList = event.target.classList ? event.target.classList : '';
     const name = event.target.name;
-    const value = event.target.value;
+    const value = event.target.value;    
     
-    if (className === 'infos') {
+    if (className === 'infos') {   
       const infos: CharacterInfos = {
         ...character.infos,
         [name]: value
@@ -46,17 +60,21 @@ function Character() {
         [name]: value
       }
       setCharacter({...character, stats: newStats})      
-    }
+    } 
   }
 
   const saveChange = () => {
     updateOneCharacter(character);
+    if (open) setOpen(false);
   }
 
   const deleteCharacter = () => {
     removeCharacter(character.id);
     navigate('/');
   }
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
     
   return (
     <div >
@@ -65,7 +83,7 @@ function Character() {
         <div className='avatar-stats'>
           <div className='avatar'style={{position: 'relative'}} >
             <DeleteOutlineIcon fontSize='inherit' style={{fontSize: "50px", float: 'left', position: 'absolute'}} onClick={deleteCharacter} />
-            <img src={character.infos.avatar} alt={"Image de " + character.infos.name} height={150} width={150} className="image" />
+            <img src={character.infos.avatar} alt={"Image de " + character.infos.name} height={150} width={150} className="image" onClick={handleOpen} />
             <input className='infos' type="text" name="name" value={character.infos.name} onChange={changeValue} onBlur={saveChange}></input>
             <input className='infos' type="text" name="type" value={character.infos.type} onChange={changeValue} onBlur={saveChange}></input>
             <input className='infos' type="text" name="class" value={character.infos.class} onChange={changeValue} onBlur={saveChange}></input>
@@ -131,7 +149,28 @@ function Character() {
         </div>
       </div>
       </div>}
-      {/* } */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Change the character's avatar
+          </Typography>
+          <input
+              id="outlined-required"
+              className='infos'
+              type="text"
+              name="avatar"
+              style={{width: '200px', height: '30px', margin: '10px 0'}}
+              // value={character && character.infos.avatar}
+              onChange={changeValue}
+          />
+          <Button variant="outlined" style={{margin: '13px 0'}} onClick={saveChange}>Submit</Button>
+        </Box>
+      </Modal>
 
     </div>
   )

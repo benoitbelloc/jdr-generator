@@ -56,6 +56,7 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
                 body: JSON.stringify(characterData)
             })
             setCharacter(characterData)
+            getCharactersByUserId();
         } catch (error) {
             console.log(error);
         }
