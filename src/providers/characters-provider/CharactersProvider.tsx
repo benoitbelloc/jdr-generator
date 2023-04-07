@@ -29,7 +29,7 @@ export const CharactersContext = React.createContext<any>([]);
 
 function CharactersProvider ({children}: {children: React.ReactNode}) {
     const [characters, setCharacters] = React.useState<Character[]>([]);
-    const [character, setCharacter] = React.useState<Character>(baseCharacter);
+    const [character, setCharacter] = React.useState<Character | null>(null);
 
     const getAllCharacters = async () => {
         try {
@@ -72,7 +72,6 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
     }
 
     const getOneCharacter = async (id: string) => {
-        if (!id) return setCharacter(baseCharacter);
         try {
             const response = await fetch(`http://localhost:3000/characters/${id}`)
             const data = await response.json()
@@ -110,7 +109,7 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
     }
 
     return (
-        <CharactersContext.Provider value={{ characters, character, getAllCharacters, getOneCharacter, updateOneCharacter, createOneCharacter, removeCharacter, getCharactersByUserId }}>
+        <CharactersContext.Provider value={{ characters, character, setCharacter, getAllCharacters, getOneCharacter, updateOneCharacter, createOneCharacter, removeCharacter, getCharactersByUserId }}>
             {children}
         </CharactersContext.Provider>
     )
