@@ -57,6 +57,31 @@
         "dagger"
       ],
       "description": "Name is an elf mage. He is a good guy. But he is not a hero. His favorite food is potato chips. He loves his brother. At night, he likes to go outside and look at the stars. It reminds him of his childhood, when his mother used to tell him stories about the stars. It was a long time ago."
+    },
+    {
+      "infos": {
+        "avatar": "https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg",
+        "name": "Name",
+        "type": "Type",
+        "class": "Class"
+      },
+      "stats": {
+        "level": 0,
+        "hp": 0,
+        "mp": 0,
+        "atk": 0,
+        "def": 0
+      },
+      "talents": {
+        "physical": 0,
+        "intellect": 0,
+        "dexterity": 0,
+        "charism": 0
+      },
+      "weapons": [],
+      "description": "",
+      "userId": 1,
+      "id": 3
     }
   ],
   "users": [
@@ -67,34 +92,6 @@
     {
       "username": "viviane",
       "id": 2
-    },
-    {
-      "username": "dfezf",
-      "id": 3
-    },
-    {
-      "username": "rg",
-      "id": 4
-    },
-    {
-      "username": "fx",
-      "id": 5
-    },
-    {
-      "username": "dzad",
-      "id": 6
-    },
-    {
-      "username": "fezsfd",
-      "id": 7
-    },
-    {
-      "username": "aaa",
-      "id": 8
-    },
-    {
-      "username": "bbbbb",
-      "id": 9
     }
   ]
 }

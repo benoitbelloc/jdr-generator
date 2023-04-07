@@ -137,18 +137,19 @@ export default function MainContent() {
   const location = useLocation();
   const id = location.pathname.split('/')[2];
   const theme = useTheme();
-  const { characters, getAllCharacters, createOneCharacter } = React.useContext(CharactersContext);
+  const { characters, createOneCharacter, getCharactersByUserId } = React.useContext(CharactersContext);
   const {user, logout} = React.useContext(UsersContext)  
 
   React.useEffect(() => {
-    getAllCharacters();
+    if (user) getCharactersByUserId();
   }, [id, user]);
 
   const createCharacter = () => {
     createOneCharacter();
-    setTimeout(() => {
-      navigate('/character/' + (characters.length + 1));
-    }, 100);
+  }
+
+  const goHome = () => {
+    navigate('/home');
   }
 
   return (
@@ -167,9 +168,9 @@ export default function MainContent() {
           >
             <MenuIcon />
           </IconButton>
-          <a href="/home" style={{textDecoration: 'none', color: 'black'}}><Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" onClick={goHome}>
             JDR-Generator
-          </Typography></a>
+          </Typography>
           {user && <Typography variant="h6" noWrap component="div" style={{marginLeft: '50px'}} onClick={logout}>
             Logout
           </Typography>}

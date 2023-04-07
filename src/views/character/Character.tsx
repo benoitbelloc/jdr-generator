@@ -4,12 +4,14 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { UsersContext } from '../../providers/users-provider/UsersProvider';
 
 function Character() {  
   const navigate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
   const { character, setCharacter, getOneCharacter, updateOneCharacter, removeCharacter } = React.useContext(CharactersContext);
+  const { user } = React.useContext(UsersContext);
 
   if (!character) getOneCharacter(id);
 
@@ -56,7 +58,7 @@ function Character() {
     
   return (
     <div >
-      { character && <div className="character">
+      {user && character && <div className="character">
       <div className="main-data">
         <div className='avatar-stats'>
           <div className='avatar'style={{position: 'relative'}} >

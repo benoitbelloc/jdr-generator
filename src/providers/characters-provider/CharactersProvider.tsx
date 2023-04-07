@@ -1,6 +1,7 @@
 import React from "react";
 import { Character } from "../../views/main-content/MainContent";
 import { UsersContext } from "../users-provider/UsersProvider";
+import { useNavigate } from "react-router-dom";
 
 const baseCharacter: Character = {
     infos: {
@@ -32,16 +33,17 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
     const [characters, setCharacters] = React.useState<Character[]>([]);
     const [character, setCharacter] = React.useState<Character | null>(null);
     const {user} = React.useContext(UsersContext)  
+    const navigate = useNavigate();
 
-    const getAllCharacters = async () => {
-        try {
-            const response = await fetch('http://localhost:3000/characters')
-            const data: Character[] = await response.json()
-            setCharacters(data)
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    // const getAllCharacters = async () => {
+    //     try {
+    //         const response = await fetch('http://localhost:3000/characters')
+    //         const data: Character[] = await response.json()
+    //         setCharacters(data)
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     const updateOneCharacter = async (characterData: Character) => {
         try {
@@ -65,8 +67,9 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
             {
                 method: "DELETE",
             })
-            setCharacter(baseCharacter)
-            getAllCharacters();
+            setCharacter(null)
+            getCharactersByUserId();
+            navigate('/home')
         } catch (error) {
             console.log(error);
         }
@@ -83,7 +86,6 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
     }
 
     const createOneCharacter = async () => {
-        console.log(user.id);
         if (!user.id) return alert('You must be logged in to create a character');
         baseCharacter.userId = user.id;
         try {
@@ -95,16 +97,17 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
                 },
                 body: JSON.stringify(baseCharacter)
             })
-            setCharacter(baseCharacter)
-            getAllCharacters();
+            setCharacter(null)
+            getCharactersByUserId();
+            navigate('/home')
         } catch (error) {
             console.log(error);
         }
     }
 
-    const getCharactersByUserId = async (userId: string) => {
+    const getCharactersByUserId = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/characters?userId=${userId}`)
+            const response = await fetch(`http://localhost:3000/characters?userId=${user.id}`)
             const data = await response.json()
             setCharacters(data)
         } catch (error) {
@@ -113,7 +116,7 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
     }
 
     return (
-        <CharactersContext.Provider value={{ characters, character, setCharacter, getAllCharacters, getOneCharacter, updateOneCharacter, createOneCharacter, removeCharacter, getCharactersByUserId }}>
+        <CharactersContext.Provider value={{ characters, character, setCharacter, getOneCharacter, updateOneCharacter, createOneCharacter, removeCharacter, getCharactersByUserId }}>
             {children}
         </CharactersContext.Provider>
     )

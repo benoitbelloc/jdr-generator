@@ -1,4 +1,4 @@
-import { Character as CharacterType, User } from '../main-content/MainContent';
+import { Character as CharacterType } from '../main-content/MainContent';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -16,9 +16,9 @@ function Home() {
   const { characters, getCharactersByUserId } = React.useContext(CharactersContext);  
   const { user } = React.useContext(UsersContext);  
 
-  React.useEffect(() => {
+  React.useEffect(() => {    
     if (!user || user === null) return navivate('/');
-    getCharactersByUserId(user.id);
+    getCharactersByUserId();
   }, [id, user]);
 
   return (
