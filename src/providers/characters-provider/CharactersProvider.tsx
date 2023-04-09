@@ -1,7 +1,7 @@
 import React from "react";
-import { Character } from "../../views/main-content/MainContent";
 import { UsersContext } from "../users-provider/UsersProvider";
 import { useNavigate } from "react-router-dom";
+import { Character } from "../../types/Types";
 
 const baseCharacter: Character = {
     infos: {

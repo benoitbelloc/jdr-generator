@@ -1,14 +1,6 @@
+import { CharacterMainDataProps } from '../../types/Types';
 import './Character.css'
-import { Character } from '../main-content/MainContent';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-
-type CharacterMainDataProps = {
-    character: Character,
-    deleteCharacter: () => void,
-    changeValue: (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => void,
-    saveChange: (event: {target: {name: string, value: string}}) => void,
-    handleOpen: () => void
-}
 
 export default function CharacterMainData(props: CharacterMainDataProps) { 
     const { character, deleteCharacter, changeValue, saveChange, handleOpen } = props;

@@ -1,14 +1,6 @@
+import { CharacterWeaponsProps } from '../../types/Types';
 import './Character.css'
-import { Character } from '../main-content/MainContent';
 import AddIcon from '@mui/icons-material/Add';
-
-type CharacterWeaponsProps = {
-    character: Character,
-    addWeapon: () => void,
-    changeWeapon: (event: {target: {name: string, value: string}}) => void,
-    saveChange: (event: {target: {name: string, value: string}}) => void,
-    deleteWeapon: (event: any) => void
-}
 
 export default function CharacterWeapons(props: CharacterWeaponsProps) {  
     const { character, addWeapon, changeWeapon, saveChange, deleteWeapon } = props;

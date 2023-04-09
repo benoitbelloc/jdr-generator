@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, TextField } from '@mui/material';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 
-function Register(){
+export default function Register(){
     const navivate = useNavigate();
     const [name, setName] = React.useState('')
     const {user, login} = React.useContext(UsersContext)
@@ -44,5 +44,3 @@ function Register(){
         </div>
     )
 }
-
-export default Register;

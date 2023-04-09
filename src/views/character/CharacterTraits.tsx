@@ -1,11 +1,5 @@
+import { CharacterTraitsAndCompetencesProps } from '../../types/Types';
 import './Character.css'
-import { Character } from '../main-content/MainContent';
-
-export type CharacterTraitsAndCompetencesProps = {
-    character: Character,
-    changeValue: (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => void,
-    saveChange: (event: {target: {name: string, value: string}}) => void,
-}
 
 export default function CharacterTraits(props: CharacterTraitsAndCompetencesProps) {  
     const { character, changeValue, saveChange } = props;

@@ -1,5 +1,5 @@
+import { CharacterTraitsAndCompetencesProps } from '../../types/Types';
 import './Character.css'
-import { CharacterTraitsAndCompetencesProps } from './CharacterTraits';
 
 export default function CharacterCompetences(props: CharacterTraitsAndCompetencesProps) {  
     const { character, changeValue, saveChange } = props;

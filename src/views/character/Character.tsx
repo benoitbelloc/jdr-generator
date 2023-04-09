@@ -1,5 +1,4 @@
 import './Character.css'
-import { CharacterInfos, CharacterStats, CharacterTalents } from '../main-content/MainContent';
 import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
@@ -9,6 +8,7 @@ import CharacterTraits from './CharacterTraits';
 import CharacterCompetences from './CharacterCompetences';
 import CharacterWeapons from './CharacterWeapons';
 import CharacterAvatarModal from './CharacterAvatarModal';
+import { CharacterInfos, CharacterStats, CharacterTalents } from '../../types/Types';
 
 export default function Character() {  
   const [open, setOpen] = React.useState(false);

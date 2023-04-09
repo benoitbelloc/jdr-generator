@@ -1,12 +1,6 @@
+import { CharacterAvatarModalProps } from '../../types/Types';
 import './Character.css'
 import { Box, Button, Modal, Typography } from '@mui/material';
-
-type CharacterAvatarModalProps = {
-    open: boolean,
-    changeValue: (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => void,
-    saveChange: () => void
-    handleClose: () => void
-}
 
 const style = {
     position: 'absolute' as 'absolute',
