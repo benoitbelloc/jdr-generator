@@ -58,7 +58,6 @@ export type User = {
   [x: string]: any;
   id: number,
   username: string
-  characterId: number,
 }
 
 const drawerWidth = 240;

@@ -4,8 +4,8 @@
       "id": 1,
       "userId": 1,
       "infos": {
-        "avatar": "https://kinsta.com/fr/wp-content/uploads/sites/4/2020/09/jpeg.jpg",
-        "name": "Name",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDxj6WBfaUpNnuL01tjl5FjexfgKaZ7D8RaGuwWI67hMIkT7Q6CtmsIw4g6xYV1Rdfb8&usqp=CAU",
+        "name": "Benny",
         "type": "human",
         "class": "knight"
       },
@@ -27,7 +27,7 @@
         "shield",
         "sword"
       ],
-      "description": "Name is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
+      "description": "Benny is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
     },
     {
       "id": 2,
@@ -66,15 +66,15 @@
         "class": "Ranger"
       },
       "stats": {
-        "level": "1",
-        "hp": "1000",
-        "mp": "20",
-        "atk": "250",
-        "def": "800"
+        "level": "3",
+        "hp": "80",
+        "mp": "30",
+        "atk": "8",
+        "def": "16"
       },
       "talents": {
-        "physical": "13",
-        "intellect": "17",
+        "physical": "18",
+        "intellect": "12",
         "dexterity": "3",
         "charism": "4"
       },
@@ -82,6 +82,31 @@
       "description": "Charles-Hubert est un sorcier avec des statistiques de tank.",
       "userId": 1,
       "id": 3
+    },
+    {
+      "infos": {
+        "avatar": "https://images.rtl.fr/~c/770v513/rtl/www/1170292-scrat-est-la-mascotte-de-la-saga-l-age-de-glace.jpg",
+        "name": "Scrat",
+        "type": "Ecureuil",
+        "class": "Glandue"
+      },
+      "stats": {
+        "level": 0,
+        "hp": "00",
+        "mp": 0,
+        "atk": "14",
+        "def": "-3"
+      },
+      "talents": {
+        "physical": "1",
+        "intellect": "-5",
+        "dexterity": "-999",
+        "charism": "-3"
+      },
+      "weapons": [],
+      "description": "Gentil et c'est déjà pas mal...",
+      "userId": 3,
+      "id": 4
     }
   ],
   "users": [
@@ -92,6 +117,14 @@
     {
       "username": "viviane",
       "id": 2
+    },
+    {
+      "username": "beuhbe",
+      "id": 3
+    },
+    {
+      "username": "lionel",
+      "id": 4
     }
   ]
 }
