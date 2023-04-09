@@ -9,7 +9,7 @@ import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 
-function Home() {
+export default function Home() {
   const navivate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
@@ -44,5 +44,3 @@ function Home() {
     </div>
   )
 }
-
-export default Home

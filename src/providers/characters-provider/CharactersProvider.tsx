@@ -29,7 +29,7 @@ const baseCharacter: Character = {
 
 export const CharactersContext = React.createContext<any>([]);
 
-function CharactersProvider ({children}: {children: React.ReactNode}) {
+export default function CharactersProvider ({children}: {children: React.ReactNode}) {
     const [characters, setCharacters] = React.useState<Character[]>([]);
     const [character, setCharacter] = React.useState<Character | null>(null);
     const {user} = React.useContext(UsersContext)  
@@ -122,5 +122,3 @@ function CharactersProvider ({children}: {children: React.ReactNode}) {
         </CharactersContext.Provider>
     )
 }
-
-export default CharactersProvider

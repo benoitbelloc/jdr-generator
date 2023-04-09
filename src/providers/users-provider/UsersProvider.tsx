@@ -1,10 +1,10 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useNavigate } from "react-router-dom";
-import { Character, User } from "../../views/main-content/MainContent";
+import { User } from "../../views/main-content/MainContent";
 
 export const UsersContext = React.createContext<any>([]);
 
-function UsersProvider ({children}: {children: React.ReactNode}){
+export default function UsersProvider ({children}: {children: React.ReactNode}){
     const navigate = useNavigate();
     const [user, setUser] = React.useState<User | null>(null);
 
@@ -67,6 +67,3 @@ function UsersProvider ({children}: {children: React.ReactNode}){
         </UsersContext.Provider>
     )
 }
-
-
-export default UsersProvider

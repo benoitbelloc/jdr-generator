@@ -107,6 +107,31 @@
       "description": "Gentil et c'est déjà pas mal...",
       "userId": 3,
       "id": 4
+    },
+    {
+      "infos": {
+        "avatar": "https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg",
+        "name": "Name",
+        "type": "Type",
+        "class": "Class"
+      },
+      "stats": {
+        "level": 0,
+        "hp": 0,
+        "mp": 0,
+        "atk": 0,
+        "def": 0
+      },
+      "talents": {
+        "physical": 0,
+        "intellect": 0,
+        "dexterity": 0,
+        "charism": 0
+      },
+      "weapons": [],
+      "description": "",
+      "userId": 1,
+      "id": 5
     }
   ],
   "users": [

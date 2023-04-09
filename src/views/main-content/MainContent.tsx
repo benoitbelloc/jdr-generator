@@ -55,7 +55,6 @@ export type Character = {
 }
 
 export type User = {
-  [x: string]: any;
   id: number,
   username: string
 }
