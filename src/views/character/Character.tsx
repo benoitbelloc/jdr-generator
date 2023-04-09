@@ -6,6 +6,7 @@ import { CharactersContext } from '../../providers/characters-provider/Character
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 import { Box, Button, Modal, TextField, Typography } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -21,6 +22,7 @@ const style = {
 
 function Character() {  
   const [open, setOpen] = React.useState(false);
+  const [newWeapon, setNewWeapon] = React.useState('');
   const navigate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
@@ -34,7 +36,9 @@ function Character() {
     getOneCharacter(id)
   }, [id, user])
 
-  const changeValue = (event: any) => {    
+  const changeValue = (event: any) => {   
+    console.log(event.target);
+     
     const className = event.target.className ? event.target.className : '';
     const classList = event.target.classList ? event.target.classList : '';
     const name = event.target.name;
@@ -71,6 +75,26 @@ function Character() {
   const deleteCharacter = () => {
     removeCharacter(character.id);
     navigate('/');
+  }
+
+  const addWeapon = () => {
+    const newWeapons = [...character.weapons, ''];
+    setCharacter({...character, weapons: newWeapons})
+  }
+
+  const changeWeapon = (event: any) => {    
+    const index = parseInt(event.target.name, 10);
+    const value = event.target.value;
+    const weaponsList = [...character.weapons];
+    weaponsList[index] = value;
+    setCharacter({...character, weapons: weaponsList})
+  }
+
+  const deleteWeapon = (event: any) => {
+    const index = parseInt(event.target.id, 10);
+    const weaponsList = [...character.weapons];    
+    weaponsList.splice(index, 1);
+    updateOneCharacter({...character, weapons: weaponsList});
   }
 
   const handleOpen = () => setOpen(true);
@@ -137,11 +161,25 @@ function Character() {
             </div>
           </div>
           <div className='competences-2'>
+            <AddIcon fontSize='inherit' style={{fontSize: "50px", right: '0', position: 'absolute'}} onClick={addWeapon} />
             <p className='title'>Weapons</p>
             <div className='weapons'>
-              <ul>
+              <ul className='weapons-list'>
                 {character.weapons.map((weapon: string, index: number) => (
-                  <li key={index}>{weapon}</li>
+                  <li key={index}>
+                    {weapon === ''
+                    ?
+                    <span>
+                      <input id="focus" className='weapon' type="text" name={index.toString()} value={weapon} onChange={changeWeapon} onBlur={saveChange} autoFocus></input>
+                      <label id={index.toString()} onClick={deleteWeapon}>x</label>
+                    </span>
+                    :
+                    <span>
+                      <input className='weapon no-focus' type="text" name={index.toString()} value={weapon} onChange={changeWeapon} onBlur={saveChange}></input>
+                      <label id={index.toString()} onClick={deleteWeapon}>x</label>
+                    </span>
+                    }
+                  </li>
                 ))}
               </ul>
             </div>

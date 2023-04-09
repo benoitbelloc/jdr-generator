@@ -6,7 +6,8 @@ export const UsersContext = React.createContext<any>([]);
 
 function UsersProvider ({children}: {children: React.ReactNode}){
     const navigate = useNavigate();
-    const [user, setUser] = React.useState<User | null>(null);
+    const [user, setUser] = React.useState<User | null>({"id": 1,
+    "username": "bob"});
 
     const login = async (username: string) => {
         try {

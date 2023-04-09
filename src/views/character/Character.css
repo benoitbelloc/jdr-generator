@@ -255,11 +255,35 @@
     border-radius: 5px;
     margin: auto;
     padding-top: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    
+    
+}
+
+.weapons-list {
+    width: 110%;
+    height: 80px;
+    margin-left: -5%;
+    overflow-y: scroll; 
 }
 
 li {
     list-style-type: none;
     text-align: center;
     font-size: 15px;
-    margin-left: -40px;
+    /* margin-left: -40px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.weapon {
+    background-color: #D9D9D9;
+    border: none;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.no-focus:focus {
+    outline: none;
 }
