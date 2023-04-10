@@ -7,7 +7,7 @@ export default function CharacterWeapons(props: CharacterWeaponsProps) {
     return (
         <div className='competences-2'>
         <AddIcon fontSize='inherit' style={{fontSize: "50px", right: '0', position: 'absolute'}} onClick={addWeapon} />
-        <p className='title'>Weapons</p>
+        <p className='title'>Armes</p>
         <div className='weapons'>
             <ul className='weapons-list'>
             {character.weapons.map((weapon: string, index: number) => (
