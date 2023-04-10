@@ -7,7 +7,7 @@ export interface AppBarProps extends MuiAppBarProps {
 // Character
 
 export type CharacterInfos = {
-    avatar: string,
+    avatar?: string,
     name: string,
     type: string,
     class: string
@@ -35,7 +35,7 @@ export type Character = {
   stats: CharacterStats,
   talents: CharacterTalents,
   weapons: string[],
-  description: string,
+  description?: string,
 }
 
 export type CharacterAvatarModalProps = {

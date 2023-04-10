@@ -130,8 +130,36 @@
       },
       "weapons": [],
       "description": "",
-      "userId": 1,
+      "userId": 5,
       "id": 5
+    },
+    {
+      "infos": {
+        "avatar": "https://cdn-icons-png.flaticon.com/512/2822/2822322.png",
+        "name": "Zackary",
+        "type": "Orque",
+        "class": "Druide"
+      },
+      "stats": {
+        "level": 1,
+        "hp": 9,
+        "mp": 10,
+        "atk": 9,
+        "def": 5
+      },
+      "talents": {
+        "physical": 8,
+        "intellect": 16,
+        "dexterity": 13,
+        "charism": 10
+      },
+      "weapons": [
+        "Runes",
+        "Dague"
+      ],
+      "description": "Zackary est un Druide Orque. Il est intelligent. Il aime nager dans le lac près de chez lui. Il déteste les sandwiches au fromage. Il a été élevé par sa mère. Il en est certain, un jour il sera célèbre.",
+      "userId": 1,
+      "id": 6
     }
   ],
   "users": [
@@ -150,6 +178,444 @@
     {
       "username": "lionel",
       "id": 4
+    },
+    {
+      "username": "Test",
+      "id": 5
+    }
+  ],
+  "classes": [
+    {
+      "name": "Barbare",
+      "url": "https://cdn-icons-png.flaticon.com/512/2822/2822366.png",
+      "weapons": [
+        "Hache",
+        "Marteau",
+        "Épée",
+        "Lance",
+        "Arc",
+        "Arbalète"
+      ],
+      "stats": {
+        "hp": {
+          "min": 5,
+          "max": 15
+        },
+        "mp": {
+          "min": 0,
+          "max": 10
+        },
+        "atk": {
+          "min": 10,
+          "max": 20
+        },
+        "def": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 10,
+          "max": 20
+        },
+        "intellect": {
+          "min": 0,
+          "max": 10
+        },
+        "dexterity": {
+          "min": 5,
+          "max": 15
+        },
+        "charism": {
+          "min": 0,
+          "max": 10
+        }
+      }
+    },
+    {
+      "name": "Chevalier",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDxj6WBfaUpNnuL01tjl5FjexfgKaZ7D8RaGuwWI67hMIkT7Q6CtmsIw4g6xYV1Rdfb8&usqp=CAU",
+      "weapons": [
+        "Hache",
+        "Épée",
+        "Lance",
+        "Arc",
+        "Arbalète",
+        "Bouclier"
+      ],
+      "stats": {
+        "hp": {
+          "min": 5,
+          "max": 15
+        },
+        "mp": {
+          "min": 0,
+          "max": 10
+        },
+        "atk": {
+          "min": 10,
+          "max": 20
+        },
+        "def": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 10,
+          "max": 20
+        },
+        "intellect": {
+          "min": 5,
+          "max": 15
+        },
+        "dexterity": {
+          "min": 5,
+          "max": 15
+        },
+        "charism": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "name": "Druide",
+      "url": "https://cdn-icons-png.flaticon.com/512/2822/2822322.png",
+      "weapons": [
+        "Lance",
+        "Bâton",
+        "Baguette Magique",
+        "Potions",
+        "Dague",
+        "Runes"
+      ],
+      "stats": {
+        "hp": {
+          "min": 0,
+          "max": 10
+        },
+        "mp": {
+          "min": 10,
+          "max": 20
+        },
+        "atk": {
+          "min": 5,
+          "max": 15
+        },
+        "def": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 0,
+          "max": 10
+        },
+        "intellect": {
+          "min": 10,
+          "max": 20
+        },
+        "dexterity": {
+          "min": 5,
+          "max": 15
+        },
+        "charism": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "name": "Ensorceleur",
+      "url": "https://cdn-icons-png.flaticon.com/128/2822/2822342.png",
+      "weapons": [
+        "Bâton",
+        "Baguette Magique",
+        "Grimoire",
+        "Dague",
+        "Sortilèges",
+        "Runes"
+      ],
+      "stats": {
+        "hp": {
+          "min": 0,
+          "max": 10
+        },
+        "mp": {
+          "min": 10,
+          "max": 20
+        },
+        "atk": {
+          "min": 5,
+          "max": 15
+        },
+        "def": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 0,
+          "max": 10
+        },
+        "intellect": {
+          "min": 10,
+          "max": 20
+        },
+        "dexterity": {
+          "min": 5,
+          "max": 15
+        },
+        "charism": {
+          "min": 10,
+          "max": 20
+        }
+      }
+    },
+    {
+      "name": "Mage",
+      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_wizard_fantasy_magic_magician_sorcerer-512.png",
+      "weapons": [
+        "Bâton",
+        "Baguette Magique",
+        "Grimoire",
+        "Dague",
+        "Sortilèges",
+        "Runes"
+      ],
+      "stats": {
+        "hp": {
+          "min": 0,
+          "max": 10
+        },
+        "mp": {
+          "min": 10,
+          "max": 20
+        },
+        "atk": {
+          "min": 5,
+          "max": 15
+        },
+        "def": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 0,
+          "max": 10
+        },
+        "intellect": {
+          "min": 10,
+          "max": 20
+        },
+        "dexterity": {
+          "min": 5,
+          "max": 15
+        },
+        "charism": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "name": "Prêtre",
+      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_fantasy_priest_mage_wizard_magic-512.png",
+      "weapons": [
+        "Grimoire",
+        "Bâton",
+        "Baguette Magique",
+        "Potions",
+        "Dague",
+        "Runes"
+      ],
+      "stats": {
+        "hp": {
+          "min": 0,
+          "max": 10
+        },
+        "mp": {
+          "min": 10,
+          "max": 20
+        },
+        "atk": {
+          "min": 5,
+          "max": 15
+        },
+        "def": {
+          "min": 0,
+          "max": 10
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 0,
+          "max": 10
+        },
+        "intellect": {
+          "min": 10,
+          "max": 20
+        },
+        "dexterity": {
+          "min": 5,
+          "max": 15
+        },
+        "charism": {
+          "min": 10,
+          "max": 20
+        }
+      }
+    },
+    {
+      "name": "Rôdeur",
+      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_hunter_crossbow_hunt_weapon_archery-512.png",
+      "weapons": [
+        "Arc",
+        "Arbalète",
+        "Dague",
+        "Fronde",
+        "Fléau",
+        "Masse"
+      ],
+      "stats": {
+        "hp": {
+          "min": 0,
+          "max": 10
+        },
+        "mp": {
+          "min": 0,
+          "max": 10
+        },
+        "atk": {
+          "min": 10,
+          "max": 20
+        },
+        "def": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 5,
+          "max": 15
+        },
+        "intellect": {
+          "min": 10,
+          "max": 20
+        },
+        "dexterity": {
+          "min": 10,
+          "max": 20
+        },
+        "charism": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "name": "Assassin",
+      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-2/340/character_rpg_blade_assassin_killer_warrior_ninja-512.png",
+      "weapons": [
+        "Dague",
+        "Poignard",
+        "Couteau",
+        "Faux",
+        "Epée",
+        "Poison"
+      ],
+      "stats": {
+        "hp": {
+          "min": 0,
+          "max": 10
+        },
+        "mp": {
+          "min": 0,
+          "max": 10
+        },
+        "atk": {
+          "min": 10,
+          "max": 20
+        },
+        "def": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 5,
+          "max": 15
+        },
+        "intellect": {
+          "min": 10,
+          "max": 20
+        },
+        "dexterity": {
+          "min": 10,
+          "max": 20
+        },
+        "charism": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "name": "Voleur",
+      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-2/340/character_rpg_thief_crime_knife_bandit_weapon-512.png",
+      "weapons": [
+        "Dague",
+        "Poignard",
+        "Couteau",
+        "Faux",
+        "Epée",
+        "Poison"
+      ],
+      "stats": {
+        "hp": {
+          "min": 0,
+          "max": 10
+        },
+        "mp": {
+          "min": 0,
+          "max": 10
+        },
+        "atk": {
+          "min": 10,
+          "max": 20
+        },
+        "def": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "talents": {
+        "physical": {
+          "min": 5,
+          "max": 15
+        },
+        "intellect": {
+          "min": 10,
+          "max": 20
+        },
+        "dexterity": {
+          "min": 10,
+          "max": 20
+        },
+        "charism": {
+          "min": 0,
+          "max": 10
+        }
+      }
     }
   ]
 }
