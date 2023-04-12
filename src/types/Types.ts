@@ -41,29 +41,27 @@ export type Character = {
 export type CharacterAvatarModalProps = {
     open: boolean,
     changeValue: (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => void,
-    saveChange: () => void
+    saveChange: any
     handleClose: () => void
 }
 
 export type CharacterMainDataProps = {
-    character: Character,
     deleteCharacter: () => void,
+    selectValue: (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => void,
     changeValue: (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => void,
-    saveChange: (event: {target: {name: string, value: string}}) => void,
+    saveChange: any,
     handleOpen: () => void
 }
 
 export type CharacterTraitsAndCompetencesProps = {
-    character: Character,
     changeValue: (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => void,
-    saveChange: (event: {target: {name: string, value: string}}) => void,
+    saveChange: any
 }
 
 export type CharacterWeaponsProps = {
-    character: Character,
     addWeapon: () => void,
     changeWeapon: (event: {target: {name: string, value: string}}) => void,
-    saveChange: (event: {target: {name: string, value: string}}) => void,
+    saveChange: any
     deleteWeapon: (event: any) => void
 }
 
@@ -72,4 +70,30 @@ export type CharacterWeaponsProps = {
 export type User = {
   id: number,
   username: string
+}
+
+// Classes
+
+type MaxMin = {
+  max: number,
+  min: number
+}
+
+export type Class = {
+  id: number,
+  name: string,
+  url: string,
+  weapons: string[],
+  stats: {
+    hp: MaxMin,
+    mp: MaxMin,
+    atk: MaxMin,
+    def: MaxMin
+  },
+  talents: {
+    physical: MaxMin,
+    intellect: MaxMin,
+    dexterity: MaxMin,
+    charism: MaxMin
+  }
 }

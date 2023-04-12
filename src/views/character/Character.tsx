@@ -8,7 +8,7 @@ import CharacterTraits from './CharacterTraits';
 import CharacterCompetences from './CharacterCompetences';
 import CharacterWeapons from './CharacterWeapons';
 import CharacterAvatarModal from './CharacterAvatarModal';
-import { CharacterInfos, CharacterStats, CharacterTalents } from '../../types/Types';
+import { Character as CharacterType, CharacterInfos, CharacterStats, CharacterTalents } from '../../types/Types';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 
 export default function Character() {  
@@ -26,39 +26,54 @@ export default function Character() {
     getOneCharacter(id)
   }, [id, user])
 
-  const changeValue = (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => {   
-    console.log(event.target);
-     
+
+  const selectValue = (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => {
+    const newCharacter = changeValue(event);
+    saveChange(newCharacter);
+  }
+
+  const changeValue = (event: {target: {className: string, classList: string[] | any, name: string, value: string}}) => {        
     const className = event.target.className ? event.target.className : '';
     const classList = event.target.classList ? event.target.classList : [];
     const name = event.target.name;
-    const value = event.target.value;    
+    const value = event.target.value; 
+    
+    let newCharacter: CharacterType = character;
     
     if (className === 'infos') {   
       const infos: CharacterInfos = {
         ...character.infos,
         [name]: value
-      }
-      setCharacter({...character, infos})      
+      }      
+      newCharacter = {...character, infos}
+      setCharacter({...character, infos})
     } else if (className === 'description') {
+      newCharacter = {...character, description: value}
       setCharacter({...character, description: value})
     } else if (className === 'talents') {
       const newTalents: CharacterTalents = {
         ...character.talents,
         [name]: value
       }
+      newCharacter = {...character, talents: newTalents}
       setCharacter({...character, talents: newTalents})
     } else if (classList.contains('stats')) {
       const newStats: CharacterStats = {
         ...character.stats,
         [name]: value
       }
+      newCharacter = {...character, stats: newStats}
       setCharacter({...character, stats: newStats})      
     } 
+    return newCharacter;
   }
 
-  const saveChange = () => {
-    updateOneCharacter(character);
+  const saveChange = (newCharacter: CharacterType) => {
+    if (newCharacter) {
+      updateOneCharacter(newCharacter);
+    } else {
+      updateOneCharacter(character);
+    }
     if (open) setOpen(false);
   }
 
@@ -93,21 +108,21 @@ export default function Character() {
   const handleClose = () => setOpen(false);
 
   // Randomiser
-  const test = async () => {
+  const shuffle = async () => {
     createRandomisedCharacter();
   }
    
   return (
     <div >
       {user && character && <div className="character">
-      <ShuffleIcon fontSize='small' style={{fontSize: "50px", left: '0', position: 'absolute'}} onClick={test} />
+      <ShuffleIcon fontSize='small' style={{fontSize: "50px", left: '0', top: '15px', position: 'absolute'}} onClick={shuffle} />
 
-      <CharacterMainData character={character} changeValue={changeValue} saveChange={saveChange} handleOpen={handleOpen} deleteCharacter={deleteCharacter} />
+      <CharacterMainData selectValue={selectValue} changeValue={changeValue} saveChange={saveChange} handleOpen={handleOpen} deleteCharacter={deleteCharacter} />
       <div className="secondary-data">
-        <CharacterTraits character={character} changeValue={changeValue} saveChange={saveChange} />
+        <CharacterTraits changeValue={changeValue} saveChange={saveChange} />
         <div className='competences'>
-          <CharacterCompetences character={character} changeValue={changeValue} saveChange={saveChange} />
-          <CharacterWeapons character={character} saveChange={saveChange} addWeapon={addWeapon} changeWeapon={changeWeapon} deleteWeapon={deleteWeapon} />
+          <CharacterCompetences changeValue={changeValue} saveChange={saveChange} />
+          <CharacterWeapons saveChange={saveChange} addWeapon={addWeapon} changeWeapon={changeWeapon} deleteWeapon={deleteWeapon} />
         </div>
       </div>
       </div>}
