@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "server": "json-server --watch db.json",
     "start": "vite",
     "dev": "vite",
     "build": "tsc && vite build",

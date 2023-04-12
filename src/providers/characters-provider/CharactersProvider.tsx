@@ -73,7 +73,7 @@ const descriptionPhrases = {
     ],
 }
 
-const types = ['Humain', 'Nain', 'Elfe', 'Orque', 'Fée', 'Gobelin', 'Gnome']
+export const types = ['Humain', 'Nain', 'Elfe', 'Orque', 'Fée', 'Gobelin', 'Gnome']
 
 export const CharactersContext = React.createContext<any>([]);
 
@@ -82,16 +82,6 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
     const [character, setCharacter] = React.useState<Character | null>(null);
     const {user} = React.useContext(UsersContext)  
     const navigate = useNavigate();
-
-    // const getAllCharacters = async () => {
-    //     try {
-    //         const response = await fetch('http://localhost:3000/characters')
-    //         const data: Character[] = await response.json()
-    //         setCharacters(data)
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
 
     const updateOneCharacter = async (characterData: Character) => {
         try {

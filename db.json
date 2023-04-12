@@ -5,9 +5,9 @@
       "userId": 1,
       "infos": {
         "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDxj6WBfaUpNnuL01tjl5FjexfgKaZ7D8RaGuwWI67hMIkT7Q6CtmsIw4g6xYV1Rdfb8&usqp=CAU",
-        "name": "Benny",
-        "type": "human",
-        "class": "knight"
+        "name": "Bugs-Benny",
+        "type": "Lapinou",
+        "class": "Mangeur de carottes"
       },
       "stats": {
         "level": "1",
@@ -61,7 +61,7 @@
     {
       "infos": {
         "avatar": "https://cdn-icons-png.flaticon.com/512/1205/1205647.png",
-        "name": "Charles-Hubert",
+        "name": "Charles",
         "type": "Sorcier",
         "class": "Ranger"
       },
@@ -160,6 +160,62 @@
       "description": "Zackary est un Druide Orque. Il est intelligent. Il aime nager dans le lac près de chez lui. Il déteste les sandwiches au fromage. Il a été élevé par sa mère. Il en est certain, un jour il sera célèbre.",
       "userId": 1,
       "id": 6
+    },
+    {
+      "infos": {
+        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_hunter_crossbow_hunt_weapon_archery-512.png",
+        "name": "Alfonzo",
+        "type": "Elfe",
+        "class": "Rôdeur"
+      },
+      "stats": {
+        "level": 1,
+        "hp": 7,
+        "mp": 9,
+        "atk": 17,
+        "def": 6
+      },
+      "talents": {
+        "physical": 14,
+        "intellect": 19,
+        "dexterity": 10,
+        "charism": 5
+      },
+      "weapons": [
+        "Fléau",
+        "Dague"
+      ],
+      "description": "Alfonzo est un Rôdeur Elfe. Il est honnête. Il aime les promenades entre amis. Il déteste les chats (il est allergique). Il est orphelin. Il en est certain, un jour il sera célèbre.",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "infos": {
+        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-2/340/character_rpg_thief_crime_knife_bandit_weapon-512.png",
+        "name": "Winfred",
+        "type": "Gobelin",
+        "class": "Voleur"
+      },
+      "stats": {
+        "level": 1,
+        "hp": 22,
+        "mp": 4,
+        "atk": 7,
+        "def": 9
+      },
+      "talents": {
+        "physical": 13,
+        "intellect": 12,
+        "dexterity": 11,
+        "charism": 8
+      },
+      "weapons": [
+        "Couteau",
+        "Hachette"
+      ],
+      "description": "Winfred est un Voleur Gobelin. Il est égocentrique. Il aime les jeux de société. Il déteste les gens qui ne respectent pas les règles. Il a un frère et une sœur. Il aimerait construire une maison.",
+      "userId": 1,
+      "id": 8
     }
   ],
   "users": [
@@ -193,34 +249,35 @@
         "Marteau",
         "Épée",
         "Lance",
-        "Arc",
-        "Arbalète"
+        "Hallebarde",
+        "Glaive",
+        "Masse"
       ],
       "stats": {
         "hp": {
-          "min": 5,
-          "max": 15
+          "min": 28,
+          "max": 35
         },
         "mp": {
           "min": 0,
-          "max": 10
+          "max": 5
         },
         "atk": {
-          "min": 10,
-          "max": 20
+          "min": 5,
+          "max": 10
         },
         "def": {
           "min": 5,
-          "max": 15
+          "max": 10
         }
       },
       "talents": {
         "physical": {
           "min": 10,
-          "max": 20
+          "max": 15
         },
         "intellect": {
-          "min": 0,
+          "min": 5,
           "max": 10
         },
         "dexterity": {
@@ -242,33 +299,34 @@
         "Lance",
         "Arc",
         "Arbalète",
-        "Bouclier"
+        "Bouclier",
+        "Glaive"
       ],
       "stats": {
         "hp": {
-          "min": 5,
-          "max": 15
+          "min": 25,
+          "max": 30
         },
         "mp": {
           "min": 0,
           "max": 10
         },
         "atk": {
-          "min": 10,
-          "max": 20
+          "min": 5,
+          "max": 10
         },
         "def": {
           "min": 5,
-          "max": 15
+          "max": 10
         }
       },
       "talents": {
         "physical": {
           "min": 10,
-          "max": 20
+          "max": 15
         },
         "intellect": {
-          "min": 5,
+          "min": 10,
           "max": 15
         },
         "dexterity": {
@@ -288,26 +346,27 @@
         "Lance",
         "Bâton",
         "Baguette Magique",
-        "Potions",
+        "Faucille",
         "Dague",
-        "Runes"
+        "Runes",
+        "Potions"
       ],
       "stats": {
         "hp": {
-          "min": 0,
-          "max": 10
+          "min": 15,
+          "max": 20
         },
         "mp": {
-          "min": 10,
-          "max": 20
+          "min": 25,
+          "max": 30
         },
         "atk": {
           "min": 5,
-          "max": 15
+          "max": 10
         },
         "def": {
           "min": 5,
-          "max": 15
+          "max": 10
         }
       },
       "talents": {
@@ -316,64 +375,16 @@
           "max": 10
         },
         "intellect": {
-          "min": 10,
-          "max": 20
+          "min": 12,
+          "max": 18
         },
         "dexterity": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 18
         },
         "charism": {
-          "min": 5,
-          "max": 15
-        }
-      }
-    },
-    {
-      "name": "Ensorceleur",
-      "url": "https://cdn-icons-png.flaticon.com/128/2822/2822342.png",
-      "weapons": [
-        "Bâton",
-        "Baguette Magique",
-        "Grimoire",
-        "Dague",
-        "Sortilèges",
-        "Runes"
-      ],
-      "stats": {
-        "hp": {
-          "min": 0,
-          "max": 10
-        },
-        "mp": {
-          "min": 10,
-          "max": 20
-        },
-        "atk": {
-          "min": 5,
-          "max": 15
-        },
-        "def": {
-          "min": 5,
-          "max": 15
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 0,
-          "max": 10
-        },
-        "intellect": {
-          "min": 10,
-          "max": 20
-        },
-        "dexterity": {
-          "min": 5,
-          "max": 15
-        },
-        "charism": {
-          "min": 10,
-          "max": 20
+          "min": 12,
+          "max": 18
         }
       }
     },
@@ -386,24 +397,25 @@
         "Grimoire",
         "Dague",
         "Sortilèges",
-        "Runes"
+        "Runes",
+        "Potions"
       ],
       "stats": {
         "hp": {
-          "min": 0,
-          "max": 10
+          "min": 10,
+          "max": 15
         },
         "mp": {
-          "min": 10,
-          "max": 20
+          "min": 35,
+          "max": 40
         },
         "atk": {
           "min": 5,
-          "max": 15
+          "max": 10
         },
         "def": {
           "min": 5,
-          "max": 15
+          "max": 10
         }
       },
       "talents": {
@@ -412,16 +424,16 @@
           "max": 10
         },
         "intellect": {
-          "min": 10,
-          "max": 20
+          "min": 12,
+          "max": 18
         },
         "dexterity": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 18
         },
         "charism": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 18
         }
       }
     },
@@ -434,23 +446,24 @@
         "Baguette Magique",
         "Potions",
         "Dague",
-        "Runes"
+        "Runes",
+        "Sortilèges"
       ],
       "stats": {
         "hp": {
-          "min": 0,
-          "max": 10
+          "min": 20,
+          "max": 25
         },
         "mp": {
           "min": 10,
-          "max": 20
+          "max": 15
         },
         "atk": {
           "min": 5,
-          "max": 15
+          "max": 10
         },
         "def": {
-          "min": 0,
+          "min": 5,
           "max": 10
         }
       },
@@ -480,26 +493,26 @@
         "Arc",
         "Arbalète",
         "Dague",
-        "Fronde",
-        "Fléau",
-        "Masse"
+        "Glaive",
+        "Hachette",
+        "Shuriken"
       ],
       "stats": {
         "hp": {
-          "min": 0,
-          "max": 10
+          "min": 15,
+          "max": 25
         },
         "mp": {
           "min": 0,
           "max": 10
         },
         "atk": {
-          "min": 10,
-          "max": 20
+          "min": 5,
+          "max": 10
         },
         "def": {
           "min": 5,
-          "max": 15
+          "max": 10
         }
       },
       "talents": {
@@ -509,15 +522,15 @@
         },
         "intellect": {
           "min": 10,
-          "max": 20
+          "max": 15
         },
         "dexterity": {
-          "min": 10,
-          "max": 20
+          "min": 12,
+          "max": 18
         },
         "charism": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 18
         }
       }
     },
@@ -528,26 +541,27 @@
         "Dague",
         "Poignard",
         "Couteau",
-        "Faux",
         "Epée",
-        "Poison"
+        "Poison",
+        "Shuriken",
+        "Hachette"
       ],
       "stats": {
         "hp": {
-          "min": 0,
-          "max": 10
+          "min": 20,
+          "max": 25
         },
         "mp": {
           "min": 0,
           "max": 10
         },
         "atk": {
-          "min": 10,
-          "max": 20
+          "min": 5,
+          "max": 10
         },
         "def": {
           "min": 5,
-          "max": 15
+          "max": 10
         }
       },
       "talents": {
@@ -557,11 +571,11 @@
         },
         "intellect": {
           "min": 10,
-          "max": 20
+          "max": 15
         },
         "dexterity": {
           "min": 10,
-          "max": 20
+          "max": 15
         },
         "charism": {
           "min": 5,
@@ -576,26 +590,27 @@
         "Dague",
         "Poignard",
         "Couteau",
-        "Faux",
         "Epée",
-        "Poison"
+        "Poison",
+        "Shuriken",
+        "Hachette"
       ],
       "stats": {
         "hp": {
-          "min": 0,
-          "max": 10
+          "min": 20,
+          "max": 25
         },
         "mp": {
           "min": 0,
           "max": 10
         },
         "atk": {
-          "min": 10,
-          "max": 20
+          "min": 5,
+          "max": 10
         },
         "def": {
           "min": 5,
-          "max": 15
+          "max": 10
         }
       },
       "talents": {
@@ -605,15 +620,15 @@
         },
         "intellect": {
           "min": 10,
-          "max": 20
+          "max": 15
         },
         "dexterity": {
           "min": 10,
-          "max": 20
+          "max": 15
         },
         "charism": {
-          "min": 0,
-          "max": 10
+          "min": 5,
+          "max": 15
         }
       }
     }

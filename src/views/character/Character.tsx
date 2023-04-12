@@ -8,7 +8,7 @@ import CharacterTraits from './CharacterTraits';
 import CharacterCompetences from './CharacterCompetences';
 import CharacterWeapons from './CharacterWeapons';
 import CharacterAvatarModal from './CharacterAvatarModal';
-import { Character as CharacterType, CharacterInfos, CharacterStats, CharacterTalents } from '../../types/Types';
+import { CharacterInfos, CharacterStats, CharacterTalents } from '../../types/Types';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 
 export default function Character() {  
@@ -95,41 +95,6 @@ export default function Character() {
   // Randomiser
   const test = async () => {
     createRandomisedCharacter();
-    // const response = await fetch('https://random-data-api.com/api/v2/users')
-    // const data = await response.json();
-    // const name = data.first_name;
-    // const newCharacter: CharacterType = {
-    //   id: character.id,
-    //   userId: character.userId,
-    //   infos: {
-    //     name,
-    //     type: types[Math.floor(Math.random() * types.length)],
-    //     class: classes[Math.floor(Math.random() * classes.length)],
-    //   },
-    //   stats: {
-    //     level: 1,
-    //     hp: Math.floor(Math.random() * 100),
-    //     mp: Math.floor(Math.random() * 100),
-    //     atk: Math.floor(Math.random() * 100),
-    //     def: Math.floor(Math.random() * 100),
-    //   },
-    //   talents: {
-    //     physical: Math.floor(Math.random() * 20),
-    //     intellect: Math.floor(Math.random() * 20),
-    //     dexterity: Math.floor(Math.random() * 20),
-    //     charism: Math.floor(Math.random() * 20),
-    //   },
-    //   weapons: [
-    //     weaponsList[Math.floor(Math.random() * weaponsList.length)],
-    //     weaponsList[Math.floor(Math.random() * weaponsList.length)],
-    //   ],
-    //   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nisl nisl aliquam nisl, eu aliquam nisl.',
-    // }
-    // const newClass = newCharacter.infos.class;
-    // const newAvatar = avatars.find((avatar: {name: string, url: string}) => avatar.name === newClass)?.url;
-    // newCharacter.infos.avatar = newAvatar;
-    // setCharacter(newCharacter);
-    // updateOneCharacter(newCharacter);
   }
    
   return (
