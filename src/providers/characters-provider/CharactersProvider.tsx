@@ -1,7 +1,7 @@
 import React from "react";
 import { UsersContext } from "../users-provider/UsersProvider";
 import { useNavigate } from "react-router-dom";
-import { Character } from "../../types/Types";
+import { Character, Class } from "../../types/Types";
 
 const baseCharacter: Character = {
     infos: {
@@ -80,8 +80,30 @@ export const CharactersContext = React.createContext<any>([]);
 export default function CharactersProvider ({children}: {children: React.ReactNode}) {
     const [characters, setCharacters] = React.useState<Character[]>([]);
     const [character, setCharacter] = React.useState<Character | null>(null);
+    const [classes, setClasses] = React.useState<Class[]>([]);
+    const [selectedClass, setSelectedClass] = React.useState<Class | null>(null);
     const {user} = React.useContext(UsersContext)  
     const navigate = useNavigate();
+
+    const getAllClasses = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/classes')
+            const data = await response.json()
+            setClasses(data)            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const getOneClass = async (name: string) => {
+        try {
+            const response = await fetch(`http://localhost:3000/classes?name=${name}`)
+            const data = await response.json()
+            setSelectedClass(data[0])
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const updateOneCharacter = async (characterData: Character) => {
         try {
@@ -95,6 +117,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
             })
             setCharacter(characterData)
             getCharactersByUserId();
+            getOneClass(characterData.infos.class)
         } catch (error) {
             console.log(error);
         }
@@ -107,6 +130,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
                 method: "DELETE",
             })
             setCharacter(null)
+            setSelectedClass(null)
             getCharactersByUserId();
             navigate('/home')
         } catch (error) {
@@ -118,7 +142,8 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
         try {
             const response = await fetch(`http://localhost:3000/characters/${id}`)
             const data = await response.json()
-            setCharacter(data)
+            setCharacter(data)            
+            getOneClass(data.infos.class)
         } catch (error) {
             console.log(error);
         }
@@ -137,6 +162,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
                 body: JSON.stringify(baseCharacter)
             })
             setCharacter(null)
+            setSelectedClass(null)
             getCharactersByUserId();
             navigate('/home')
         } catch (error) {
@@ -164,7 +190,6 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
             const classes = await fetch(`http://localhost:3000/classes`)
             const classesData = await classes.json()
             const randomClass = classesData[Math.floor(Math.random() * classesData.length)]
-            console.log(randomClass);
             
             const newCharacter: Character = {
                 id: character.id,
@@ -200,14 +225,15 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
             const family = descriptionPhrases.family[Math.floor(Math.random() * descriptionPhrases.family.length)]
             const objective = descriptionPhrases.objective[Math.floor(Math.random() * descriptionPhrases.objective.length)]
             newCharacter.description = `${baseDesc} ${adjective} ${liked} ${disliked} ${family} ${objective}`
-            updateOneCharacter(newCharacter);            
+            updateOneCharacter(newCharacter);    
+            getOneClass(newCharacter.infos.class)        
         } catch (error) {
             console.log(error)
         }
     }
 
     return (
-        <CharactersContext.Provider value={{ characters, character, setCharacter, getOneCharacter, updateOneCharacter, createOneCharacter, removeCharacter, getCharactersByUserId, createRandomisedCharacter }}>
+        <CharactersContext.Provider value={{ characters, character, classes, selectedClass, setCharacter, getAllClasses, getOneCharacter, updateOneCharacter, createOneCharacter, removeCharacter, getCharactersByUserId, createRandomisedCharacter }}>
             {children}
         </CharactersContext.Provider>
     )

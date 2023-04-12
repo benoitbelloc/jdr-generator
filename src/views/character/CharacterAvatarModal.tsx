@@ -33,7 +33,6 @@ export default function CharacterAvatarModal(props: CharacterAvatarModalProps)  
                 type="text"
                 name="avatar"
                 style={{width: '200px', height: '30px', margin: '10px 0'}}
-                // value={character && character.infos.avatar}
                 onChange={changeValue}
             />
             <Button variant="outlined" style={{margin: '13px 0'}} onClick={saveChange}>Submit</Button>

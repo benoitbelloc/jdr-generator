@@ -6,8 +6,8 @@
       "infos": {
         "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDxj6WBfaUpNnuL01tjl5FjexfgKaZ7D8RaGuwWI67hMIkT7Q6CtmsIw4g6xYV1Rdfb8&usqp=CAU",
         "name": "Bugs-Benny",
-        "type": "Lapinou",
-        "class": "Mangeur de carottes"
+        "type": "Humain",
+        "class": "Chevalier"
       },
       "stats": {
         "level": "1",
@@ -192,28 +192,28 @@
     {
       "infos": {
         "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-2/340/character_rpg_thief_crime_knife_bandit_weapon-512.png",
-        "name": "Winfred",
-        "type": "Gobelin",
+        "name": "Garret",
+        "type": "Humain",
         "class": "Voleur"
       },
       "stats": {
         "level": 1,
-        "hp": 22,
-        "mp": 4,
-        "atk": 7,
-        "def": 9
+        "hp": 20,
+        "mp": 5,
+        "atk": 9,
+        "def": 6
       },
       "talents": {
-        "physical": 13,
-        "intellect": 12,
+        "physical": 12,
+        "intellect": 13,
         "dexterity": 11,
-        "charism": 8
+        "charism": 13
       },
       "weapons": [
-        "Couteau",
-        "Hachette"
+        "Epée",
+        "Shuriken"
       ],
-      "description": "Winfred est un Voleur Gobelin. Il est égocentrique. Il aime les jeux de société. Il déteste les gens qui ne respectent pas les règles. Il a un frère et une sœur. Il aimerait construire une maison.",
+      "description": "Garret est un Voleur Humain. Il est égocentrique. Il aime la cuisine de sa mère. Il déteste courir. Il a été élevé par sa mère. Il aimerait construire une maison.",
       "userId": 1,
       "id": 8
     }

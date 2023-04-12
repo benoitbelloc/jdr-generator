@@ -21,11 +21,12 @@ export const DrawerHeader = styled('div')(({ theme }) => ({
 export default function MainContent() {
   const location = useLocation();
   const id = location.pathname.split('/')[2];
-  const { getCharactersByUserId } = React.useContext(CharactersContext);
+  const { getCharactersByUserId, classes, getAllClasses } = React.useContext(CharactersContext);
   const {user} = React.useContext(UsersContext)  
 
   React.useEffect(() => {
     if (user) getCharactersByUserId();
+    if (user && classes.length === 0) getAllClasses();
   }, [id, user]);
 
   return (
