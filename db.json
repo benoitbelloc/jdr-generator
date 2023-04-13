@@ -216,6 +216,34 @@
       "description": "Garret est un Voleur Humain. Il est égocentrique. Il aime la cuisine de sa mère. Il déteste courir. Il a été élevé par sa mère. Il aimerait construire une maison.",
       "userId": 1,
       "id": 8
+    },
+    {
+      "infos": {
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDxj6WBfaUpNnuL01tjl5FjexfgKaZ7D8RaGuwWI67hMIkT7Q6CtmsIw4g6xYV1Rdfb8&usqp=CAU",
+        "name": "Emery",
+        "type": "Orque",
+        "class": "Chevalier"
+      },
+      "stats": {
+        "level": 1,
+        "hp": 27,
+        "mp": 9,
+        "atk": 7,
+        "def": 6
+      },
+      "talents": {
+        "physical": 10,
+        "intellect": 10,
+        "dexterity": 5,
+        "charism": 7
+      },
+      "weapons": [
+        "Arc",
+        "Glaive"
+      ],
+      "description": "Emery est un Chevalier Orque. Il est honnête. Il aime les jeux de société. Il déteste les animaux sauvages. Il a un frère et une sœur. Il veut devenir un héros.",
+      "userId": 1,
+      "id": 9
     }
   ],
   "users": [

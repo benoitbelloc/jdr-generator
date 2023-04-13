@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useNavigate } from "react-router-dom";
 import { Button, TextField } from '@mui/material';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
+import './Register.css';
 
 export default function Register(){
     const navivate = useNavigate();
@@ -31,8 +32,9 @@ export default function Register(){
     };
 
     return(
-        <div>
+        <div className='container'>
             <TextField
+                className='input-register'
                 id="outlined-required"
                 label="Pseudo"
                 size="small"
@@ -40,7 +42,7 @@ export default function Register(){
                 onChange={changeValue}
                 onKeyUp={validateWithEnter}
             />
-            <Button variant="outlined" onClick={checkUser}>Submit</Button>
+            <Button className='button-register' variant="outlined" onClick={checkUser}>Submit</Button>
         </div>
     )
 }
