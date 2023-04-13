@@ -96,9 +96,9 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
     }
 
     const getOneClass = async (name: string) => {
-        try {
+        try {            
             const response = await fetch(`http://localhost:3000/classes?name=${name}`)
-            const data = await response.json()
+            const data = await response.json()            
             setSelectedClass(data[0])
         } catch (error) {
             console.log(error);
@@ -142,7 +142,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
         try {
             const response = await fetch(`http://localhost:3000/characters/${id}`)
             const data = await response.json()
-            setCharacter(data)            
+            setCharacter(data)                        
             getOneClass(data.infos.class)
         } catch (error) {
             console.log(error);

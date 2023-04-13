@@ -5,7 +5,7 @@ import { CharactersContext } from '../../providers/characters-provider/Character
 import React from 'react';
 
 export default function CharacterWeapons(props: CharacterWeaponsProps) {  
-    const { addWeapon, changeWeapon, saveChange, deleteWeapon } = props;
+    const { addWeapon, changeWeapon, deleteWeapon } = props;
     const { character, selectedClass } = React.useContext(CharactersContext);
     
     return (

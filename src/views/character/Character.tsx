@@ -16,7 +16,7 @@ export default function Character() {
   const navigate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
-  const { character, setCharacter, getOneCharacter, updateOneCharacter, removeCharacter, createRandomisedCharacter } = React.useContext(CharactersContext);
+  const { character, setCharacter, getOneCharacter, updateOneCharacter, removeCharacter, createRandomisedCharacter, selectedClass } = React.useContext(CharactersContext);
   const { user } = React.useContext(UsersContext);
 
   if (!character) getOneCharacter(id);
@@ -24,6 +24,7 @@ export default function Character() {
   React.useEffect(() => {
     if (!user || user === null) return navigate('/');
     getOneCharacter(id)
+    console.log(selectedClass)
   }, [id, user])
 
 
@@ -84,7 +85,8 @@ export default function Character() {
 
   // Weapons
   const addWeapon = () => {
-    const newWeapons = [...character.weapons, ''];
+    const newWeapon = selectedClass.weapons[Math.floor(Math.random() * selectedClass.weapons.length)]
+    const newWeapons = [...character.weapons, newWeapon];
     setCharacter({...character, weapons: newWeapons})
   }
 
@@ -123,7 +125,7 @@ export default function Character() {
         <CharacterTraits changeValue={changeValue} saveChange={saveChange} />
         <div className='competences'>
           <CharacterCompetences changeValue={changeValue} saveChange={saveChange} />
-          <CharacterWeapons saveChange={saveChange} addWeapon={addWeapon} changeWeapon={changeWeapon} deleteWeapon={deleteWeapon} />
+          <CharacterWeapons addWeapon={addWeapon} changeWeapon={changeWeapon} deleteWeapon={deleteWeapon} />
         </div>
       </div>
       </div>}

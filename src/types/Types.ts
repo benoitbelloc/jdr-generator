@@ -61,7 +61,6 @@ export type CharacterTraitsAndCompetencesProps = {
 export type CharacterWeaponsProps = {
     addWeapon: () => void,
     changeWeapon: (event: {target: {name: string, value: string}}) => void,
-    saveChange: any
     deleteWeapon: (event: any) => void
 }
 

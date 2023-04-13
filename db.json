@@ -51,19 +51,15 @@
         "dexterity": 12,
         "charism": 18
       },
-      "weapons": [
-        "staff",
-        "book",
-        "dagger"
-      ],
+      "weapons": [],
       "description": "Name is an elf mage. He is a good guy. But he is not a hero. His favorite food is potato chips. He loves his brother. At night, he likes to go outside and look at the stars. It reminds him of his childhood, when his mother used to tell him stories about the stars. It was a long time ago."
     },
     {
       "infos": {
         "avatar": "https://cdn-icons-png.flaticon.com/512/1205/1205647.png",
         "name": "Charles",
-        "type": "Sorcier",
-        "class": "Ranger"
+        "type": "Humain",
+        "class": "Mage"
       },
       "stats": {
         "level": "3",
@@ -78,7 +74,11 @@
         "dexterity": "3",
         "charism": "4"
       },
-      "weapons": [],
+      "weapons": [
+        "Bâton",
+        "Potions",
+        "Dague"
+      ],
       "description": "Charles-Hubert est un sorcier avec des statistiques de tank.",
       "userId": 1,
       "id": 3
