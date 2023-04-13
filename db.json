@@ -191,59 +191,28 @@
     },
     {
       "infos": {
-        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_hunter_crossbow_hunt_weapon_archery-512.png",
-        "name": "Corene",
-        "type": "Fée",
-        "class": "Rôdeur"
+        "avatar": "https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg",
+        "name": "Name",
+        "type": "Type",
+        "class": "Class"
       },
       "stats": {
-        "level": 1,
-        "hp": 21,
-        "mp": 9,
-        "atk": 6,
-        "def": 5
+        "level": 0,
+        "hp": 0,
+        "mp": 0,
+        "atk": 0,
+        "def": 0
       },
       "talents": {
-        "physical": 7,
-        "intellect": 10,
-        "dexterity": 16,
-        "charism": 14
+        "physical": 0,
+        "intellect": 0,
+        "dexterity": 0,
+        "charism": 0
       },
-      "weapons": [
-        "Arbalète",
-        "Hachette"
-      ],
-      "description": "Corene est un Rôdeur Fée. Il est égocentrique. Il aime nager dans le lac près de chez lui. Il déteste les sandwiches au fromage. Il a été élevé par ses grands-parents. Il rêve de fonder une famille.",
+      "weapons": [],
+      "description": "",
       "userId": 1,
       "id": 8
-    },
-    {
-      "infos": {
-        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDxj6WBfaUpNnuL01tjl5FjexfgKaZ7D8RaGuwWI67hMIkT7Q6CtmsIw4g6xYV1Rdfb8&usqp=CAU",
-        "name": "Emery",
-        "type": "Orque",
-        "class": "Chevalier"
-      },
-      "stats": {
-        "level": 1,
-        "hp": 27,
-        "mp": 9,
-        "atk": 7,
-        "def": 6
-      },
-      "talents": {
-        "physical": 10,
-        "intellect": 10,
-        "dexterity": 5,
-        "charism": 7
-      },
-      "weapons": [
-        "Arc",
-        "Glaive"
-      ],
-      "description": "Emery est un Chevalier Orque. Il est honnête. Il aime les jeux de société. Il déteste les animaux sauvages. Il a un frère et une sœur. Il veut devenir un héros.",
-      "userId": 1,
-      "id": 9
     }
   ],
   "users": [

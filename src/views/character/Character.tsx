@@ -121,6 +121,7 @@ export default function Character() {
           <CharacterWeapons addWeapon={addWeapon} changeWeapon={changeWeapon} deleteWeapon={deleteWeapon} />
         </div>
       </div>
+      <div style={{width: '100%', height: '20px', backgroundColor: 'white'}}></div>
       </div>}
       <CharacterAvatarModal open={open} changeValue={changeValue} handleClose={handleClose} saveChange={saveChange} />
     </div>
