@@ -191,29 +191,29 @@
     },
     {
       "infos": {
-        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-2/340/character_rpg_thief_crime_knife_bandit_weapon-512.png",
-        "name": "Garret",
-        "type": "Humain",
-        "class": "Voleur"
+        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_hunter_crossbow_hunt_weapon_archery-512.png",
+        "name": "Corene",
+        "type": "Fée",
+        "class": "Rôdeur"
       },
       "stats": {
         "level": 1,
-        "hp": 20,
-        "mp": 5,
-        "atk": 9,
-        "def": 6
+        "hp": 21,
+        "mp": 9,
+        "atk": 6,
+        "def": 5
       },
       "talents": {
-        "physical": 12,
-        "intellect": 13,
-        "dexterity": 11,
-        "charism": 13
+        "physical": 7,
+        "intellect": 10,
+        "dexterity": 16,
+        "charism": 14
       },
       "weapons": [
-        "Epée",
-        "Shuriken"
+        "Arbalète",
+        "Hachette"
       ],
-      "description": "Garret est un Voleur Humain. Il est égocentrique. Il aime la cuisine de sa mère. Il déteste courir. Il a été élevé par sa mère. Il aimerait construire une maison.",
+      "description": "Corene est un Rôdeur Fée. Il est égocentrique. Il aime nager dans le lac près de chez lui. Il déteste les sandwiches au fromage. Il a été élevé par ses grands-parents. Il rêve de fonder une famille.",
       "userId": 1,
       "id": 8
     }

@@ -9,19 +9,20 @@ import CharacterCompetences from './CharacterCompetences';
 import CharacterWeapons from './CharacterWeapons';
 import CharacterAvatarModal from './CharacterAvatarModal';
 import { Character as CharacterType, CharacterInfos, CharacterStats, CharacterTalents } from '../../types/Types';
-import ShuffleIcon from '@mui/icons-material/Shuffle';
 
 export default function Character() {  
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
-  const { character, setCharacter, getOneCharacter, updateOneCharacter, removeCharacter, createRandomisedCharacter, selectedClass } = React.useContext(CharactersContext);
+  const { character, setCharacter, getOneCharacter, updateOneCharacter, removeCharacter, selectedClass } = React.useContext(CharactersContext);
   const { user } = React.useContext(UsersContext);
+  const [isMobile, setIsMobile] = React.useState(false);
 
   if (!character) getOneCharacter(id);
 
   React.useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
     getOneCharacter(id)
     console.log(selectedClass)
   }, [id, user])
@@ -108,17 +109,10 @@ export default function Character() {
   // Modal
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  // Randomiser
-  const shuffle = async () => {
-    createRandomisedCharacter();
-  }
    
   return (
-    <div >
+    <div>
       {user && character && <div className="character">
-      <ShuffleIcon fontSize='small' style={{fontSize: "50px", left: '0', top: '15px', position: 'absolute'}} onClick={shuffle} />
-
       <CharacterMainData selectValue={selectValue} changeValue={changeValue} saveChange={saveChange} handleOpen={handleOpen} deleteCharacter={deleteCharacter} />
       <div className="secondary-data">
         <CharacterTraits changeValue={changeValue} saveChange={saveChange} />
