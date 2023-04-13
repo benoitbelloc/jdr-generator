@@ -17,7 +17,7 @@ import { UsersContext } from '../../providers/users-provider/UsersProvider';
 import { DrawerHeader } from './MainContent';
 import { Character } from '../../types/Types';
 
-const drawerWidth = 240;
+const drawerWidth = '100vw';
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
@@ -57,7 +57,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function DrawerComponent() {
+export default function DrawerComponent(props: { open: boolean, handleDrawerClose: () => void, isMobile: boolean }) {
+  const { open, handleDrawerClose, isMobile } = props;
   const location = useLocation();
   const id = location.pathname.split('/')[2];
   const theme = useTheme();
@@ -73,36 +74,40 @@ export default function DrawerComponent() {
   }
 
   return (
-    <Drawer variant="permanent">
+    <Drawer variant="permanent" open={open} sx={{
+      display: isMobile && !open ? 'none' : 'block',
+      }}>
+        {open && "HELLO"}
+        {isMobile && "hELLO"}
         <DrawerHeader>
-            <IconButton>
+            <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>
         </DrawerHeader>
         <Divider />
         <List>
-            {characters && user ? characters.map((item: Character) => (
-            <ListItem key={item.id} disablePadding sx={{ display: 'block', color: 'black' }} component={Link} to={"/character/" + item.id}>
+            {characters && user && characters.map((item: Character) => (
+            <ListItem key={item.id} disablePadding sx={{ display: 'block', color: 'black' }} component={Link} to={"/character/" + item.id} onClick={handleDrawerClose}>
                 <ListItemButton
                 sx={{
                     minHeight: 48,
-                    justifyContent: 'center',
+                    justifyContent: open && !isMobile ? 'initial' : 'center',
                     px: 2.5,
                 }}
                 >
                 <ListItemIcon
                     sx={{
                     minWidth: 0,
-                    mr: 'auto',
+                    mr: open ? 3 : 'auto',
                     justifyContent: 'center',
                     }}
                 >
                     <img src={item.infos.avatar} alt={"Image de " + item.infos.name} height={50} width={50} style={{borderRadius: '50%'}} />
                 </ListItemIcon>
-                <ListItemText primary={item.infos.name} sx={{ opacity: 0 }} />
+                <ListItemText primary={item.infos.name} sx={{ opacity: open ? 1 : 0 }} />
                 </ListItemButton>
             </ListItem>
-            )) : null}
+            ))}
 
             {user && <ListItem disablePadding sx={{ display: 'block', color: 'black', fontSize:'60px', marginLeft: '0' }} onClick={createCharacter}>
                 <ListItemButton

@@ -3,17 +3,24 @@ import { CharacterMainDataProps, Class } from '../../types/Types';
 import './Character.css'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { CharactersContext, types } from '../../providers/characters-provider/CharactersProvider';
+import ShuffleIcon from '@mui/icons-material/Shuffle';
 
 export default function CharacterMainData(props: CharacterMainDataProps) { 
     const { deleteCharacter, selectValue, changeValue, saveChange, handleOpen } = props;
-    const { character, classes } = React.useContext(CharactersContext);
+    const { character, classes, createRandomisedCharacter } = React.useContext(CharactersContext);
+
+
+    // Randomiser
+  const shuffle = async () => {
+    createRandomisedCharacter();
+  }
 
     return (
       <div className="main-data">
         <div className='avatar-stats'>
           <div className='avatar'style={{position: 'relative'}} >
             <DeleteOutlineIcon fontSize='inherit' style={{fontSize: "50px", float: 'left', position: 'absolute'}} onClick={deleteCharacter} />
-            
+            <ShuffleIcon className='shuffle' fontSize='small' style={{fontSize: "50px", right: '0', position: 'absolute'}} onClick={shuffle} />
             <img src={character.infos.avatar} alt={"Image de " + character.infos.name} height={150} width={150} className="image" onClick={handleOpen} />
             
             <input className='infos' type="text" name="name" value={character.infos.name} onChange={changeValue} onBlur={saveChange}></input>

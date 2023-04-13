@@ -10,7 +10,7 @@ import { CharactersContext } from '../../providers/characters-provider/Character
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 import { AppBarProps } from '../../types/Types';
 
-const drawerWidth = 240;
+const drawerWidth = '100vw';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -30,7 +30,14 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-export default function MainContent() {
+type MainContentProps = {
+  open: boolean;
+  handleDrawerOpen: () => void;
+  isMobile: boolean;
+};
+
+export default function MainContent(props: MainContentProps) {
+  const { open, handleDrawerOpen, isMobile } = props;
   const navigate = useNavigate();
   const location = useLocation();
   const id = location.pathname.split('/')[2];
@@ -46,15 +53,16 @@ export default function MainContent() {
   }
 
   return (
-    <AppBar position="fixed" sx={{backgroundColor: 'white', color: 'black'}}>
+    <AppBar position="fixed" sx={{backgroundColor: 'white', color: 'black'}} open={open}>
     <Toolbar sx={{color: 'black', textDecoration: 'none'}}>
         <IconButton
         color="inherit"
         aria-label="open drawer"
+        onClick={handleDrawerOpen}
         edge="start"
         sx={{
             marginRight: 5,
-            ...({ display: 'none' }),
+            ...((!isMobile || !user) && { display: 'none' }),
         }}
         >
         <MenuIcon />
