@@ -14,14 +14,14 @@ export default function CharacterWeapons(props: CharacterWeaponsProps) {
         <p className='title'>Armes</p>
         <div className='weapons'>
             <ul className='weapons-list'>
-            {character.weapons.map((weapon: string, index: number) => (
+            {character.weapons ? character.weapons.map((weapon: string, index: number) => (
                 <li key={index}>
                 {weapon === ''
                 ?
                 <span>
                     <select id="focus" className='weapon' name={index.toString()} value={weapon} onChange={changeWeapon} >
-                        {selectedClass.weapons.map((weapon: string, index: number) => {
-                            return <option key={index} value={weapon}>{weapon}</option>
+                        {selectedClass.weapons.map((classWeapon: string, i: number) => {
+                            return <option key={i} value={classWeapon}>{classWeapon}</option>
                         })}
                     </select>
                     <label id={index.toString()} onClick={deleteWeapon}>x</label>
@@ -29,15 +29,15 @@ export default function CharacterWeapons(props: CharacterWeaponsProps) {
                 :
                 <span>
                     {selectedClass && <select className='weapon no-focus' name={index.toString()} value={weapon} onChange={changeWeapon} >
-                        {selectedClass.weapons.map((weapon: string, index: number) => {
-                            return <option key={index} value={weapon}>{weapon}</option>
+                        {selectedClass.weapons.map((classWeapon: string, i: number) => {
+                            return <option key={i} value={classWeapon}>{classWeapon}</option>
                         })}
                     </select>}
                     <label id={index.toString()} onClick={deleteWeapon}>x</label>
                 </span>
                 }
                 </li>
-            ))}
+            )) : null}
             </ul>
         </div>
         </div>

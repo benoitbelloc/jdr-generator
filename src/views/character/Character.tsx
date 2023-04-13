@@ -94,6 +94,7 @@ export default function Character() {
     const weaponsList = [...character.weapons];
     weaponsList[index] = value;
     setCharacter({...character, weapons: weaponsList})
+    saveChange({...character, weapons: weaponsList});
   }
 
   const deleteWeapon = (event: any) => {

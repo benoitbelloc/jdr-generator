@@ -12,10 +12,12 @@ export default function UsersProvider ({children}: {children: React.ReactNode}){
         try {
             const response = await fetch(`http://localhost:3000/users?username=${username}`)
             const data = await response.json();
+            let idForLocal = {};
             if (data.length > 1) {
                 alert('There is more than one user with this name')
             } else if (data.length === 1) {
                 setUser(data[0]);
+                idForLocal = data[0].username;
             } else if (data.length === 0) {
                 await fetch(`http://localhost:3000/users?username=${username}`, 
                 {
@@ -28,7 +30,10 @@ export default function UsersProvider ({children}: {children: React.ReactNode}){
                 const responseAfterCreate = await fetch(`http://localhost:3000/users?username=${username}`)
                 const dataAfterCreate = await responseAfterCreate.json();
                 setUser(dataAfterCreate[0]);
+                idForLocal = dataAfterCreate[0].username;
+                console.log("before local");
             }
+            localStorage.setItem('user', idForLocal.toString());
             navigate('/home');
         } catch (error) {
             console.log(error);
@@ -38,31 +43,29 @@ export default function UsersProvider ({children}: {children: React.ReactNode}){
 
     const logout = () => {
         setUser(null);
+        localStorage.removeItem('user');
         navigate('/');
     }
 
     const getUser = async (username: string) => {
         try {
-            const response = await fetch(`http://localhost:3000/users?username=${username}}`)
-            const data = await response.json()
-            setUser(data)
+            const response = await fetch(`http://localhost:3000/users?username=${username}`)
+            const data = await response.json()            
+            setUser(data[0])
         } catch (error) {
             console.log(error);
         }
     }
 
-    const getCharacterByUserId = async (characterId: string) => {
-        try {
-            const reponse = await fetch(`http://localhost:3000/users/users?charactersId=${characterId}`)
-            const data = await reponse.json()
-            setUser(data)
-        } catch (error) {
-            console.log(error);
+    const getUserFromLocalStorage = () => {
+        const userNameFromLocalStorage = localStorage.getItem('user');        
+        if (userNameFromLocalStorage) {
+            getUser(userNameFromLocalStorage);            
         }
     }
 
     return (
-        <UsersContext.Provider value={{ login, logout, user, getUser, getCharacterByUserId }}>
+        <UsersContext.Provider value={{ login, logout, user, getUser, getUserFromLocalStorage }}>
             {children}
         </UsersContext.Provider>
     )
