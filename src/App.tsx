@@ -1,8 +1,7 @@
 import './App.css'
-import Header from './views/main-content/MainContent'
-import Router from './router/Router'
 import CharactersProvider from './providers/characters-provider/CharactersProvider'
 import UsersProvider from './providers/users-provider/UsersProvider'
+import MainContent from './views/main-content/MainContent'
 
 function App() {
 
@@ -10,7 +9,7 @@ function App() {
     <div className="App">
       <UsersProvider>
         <CharactersProvider>
-          <Header />
+          <MainContent />
         </CharactersProvider>
       </UsersProvider>
     </div>

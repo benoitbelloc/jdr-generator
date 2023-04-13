@@ -22,7 +22,6 @@ export default function Character() {
   if (!character) getOneCharacter(id);
 
   React.useEffect(() => {
-    if (!user || user === null) return navigate('/');
     getOneCharacter(id)
     console.log(selectedClass)
   }, [id, user])
