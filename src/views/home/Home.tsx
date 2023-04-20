@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import React from 'react';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
+import { DarkModeContext } from '../../providers/darkmode-provider/DarkModeProvider';
 
 export default function Home() {
   const navivate = useNavigate();
@@ -15,6 +16,7 @@ export default function Home() {
   const id = location.pathname.split('/')[2];
   const { characters, getCharactersByUserId } = React.useContext(CharactersContext);  
   const { user } = React.useContext(UsersContext);  
+  const { darkMode } = React.useContext(DarkModeContext);
 
   React.useEffect(() => {    
     if (!user || user === null) return navivate('/');
@@ -28,7 +30,7 @@ export default function Home() {
             <div key={index} className="card">
               <Card>
                 <CardActionArea>
-                      <CardMedia className="cardMedia" component={Link} to={"/character/" + item.id}>
+                      <CardMedia className="cardMedia" component={Link} to={"/character/" + item.id} sx={{color: darkMode ? 'white' : 'black', backgroundColor: darkMode ? 'black' : 'white'}}>
                         <img className="cardImage" src={item.infos.avatar} />
                         <CardContent className="cardContent">
                           <h3>{item.infos.name}</h3>

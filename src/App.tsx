@@ -4,11 +4,9 @@ import CharactersProvider from './providers/characters-provider/CharactersProvid
 import UsersProvider from './providers/users-provider/UsersProvider'
 import Router from './router/Router'
 import MainContent from './views/main-content/MainContent'
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
-import { IconButton } from '@mui/material'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { ColorModeContext } from './views/main-content/AppBar'
+import DarkModeProvider from './providers/darkmode-provider/DarkModeProvider'
 
 
 function App() {
@@ -34,6 +32,7 @@ function App() {
   return (
     <div className="App">
       <ColorModeContext.Provider value={colorMode}>
+        <DarkModeProvider>
         <ThemeProvider theme={theme}>
           <UsersProvider>
             <CharactersProvider>
@@ -42,6 +41,7 @@ function App() {
             </CharactersProvider>
           </UsersProvider>
         </ThemeProvider>
+        </DarkModeProvider>
       </ColorModeContext.Provider>
     </div>
   )

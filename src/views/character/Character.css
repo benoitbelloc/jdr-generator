@@ -43,10 +43,9 @@
     align-items: center;
     background-color: #D9D9D9;
     border-radius: 5px;
-    /* display: inline-block; */
-    /* float: center; */
     margin-left: 25%;
 }
+
 
 .text {
     width: 100%;
@@ -110,6 +109,7 @@
     text-align: center;
     padding-bottom: 10px;
     border-bottom: #8D8D8D 1px solid;
+    color: black
 }
 
 .talents {
@@ -209,6 +209,7 @@
     border-right: #8D8D8D 1px solid;
     font-size: 15px;
     margin-left: 10px;
+    color: black;
 }
 
 .stat-number {

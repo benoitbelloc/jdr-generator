@@ -13,6 +13,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import './MainContent.css'
+import { DarkModeContext } from '../../providers/darkmode-provider/DarkModeProvider';
 
 const drawerWidth = '100vw';
 
@@ -47,6 +48,7 @@ export default function MainContent(props: MainContentProps) {
   const id = location.pathname.split('/')[2];
   const { getCharactersByUserId } = React.useContext(CharactersContext);
   const {user, logout} = React.useContext(UsersContext)  
+  const { darkMode, toggleDarkMode } = React.useContext(DarkModeContext);
 
   React.useEffect(() => {
     if (user) getCharactersByUserId();
@@ -59,9 +61,14 @@ export default function MainContent(props: MainContentProps) {
   const theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
 
+  const toggleMode = () => {
+    colorMode.toggleColorMode();
+    toggleDarkMode();
+  };
+
   return (
-    <AppBar position="fixed" sx={{backgroundColor: 'white', color: 'black'}} open={open}>
-    <Toolbar sx={{color: 'black', textDecoration: 'none'}}>
+    <AppBar position="fixed" sx={{backgroundColor: darkMode ? 'black' : 'white', color: darkMode ? 'white' : 'black'}} open={open}>
+    <Toolbar sx={{color: darkMode ? 'white' : 'black', textDecoration: 'none'}}>
         <IconButton
         color="inherit"
         aria-label="open drawer"
@@ -81,7 +88,7 @@ export default function MainContent(props: MainContentProps) {
         Logout
         </Typography>}
         <div className="darkmode">
-          <IconButton sx={{ ml: 1}} onClick={colorMode.toggleColorMode} color="inherit">
+          <IconButton sx={{ ml: 1}} onClick={toggleMode} color="inherit">
           {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
         </div>

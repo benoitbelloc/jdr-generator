@@ -33,7 +33,7 @@ export default function CharacterWeapons(props: CharacterWeaponsProps) {
                                 return <option key={i} value={classWeapon}>{classWeapon}</option>
                             })}
                         </select>}
-                        <label id={index.toString()} onClick={deleteWeapon}>x</label>
+                        <label id={index.toString()} onClick={deleteWeapon} style={{color: 'black'}}>x</label>
                     </span>
                     }
                     </li>
