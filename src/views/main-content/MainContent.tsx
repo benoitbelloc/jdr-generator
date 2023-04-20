@@ -2,13 +2,12 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Router from '../../router/Router';
 import { useLocation } from "react-router-dom";
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 import AppBar from './AppBar';
 import DrawerComponent from './Drawer';
-import Home from '../home/Home';
+import { DarkModeContext } from '../../providers/darkmode-provider/DarkModeProvider';
 
 export const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -22,14 +21,14 @@ export const DrawerHeader = styled('div')(({ theme }) => ({
 export default function MainContent() {
   const location = useLocation();
   const id = location.pathname.split('/')[2];
-  const { getCharactersByUserId, classes, getAllClasses, character } = React.useContext(CharactersContext);
+  const { getCharactersByUserId, classes, getAllClasses } = React.useContext(CharactersContext);
   const { user, getUserFromLocalStorage } = React.useContext(UsersContext) 
   const [open, setOpen] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {    
     setIsMobile(window.innerWidth < 768);
-    if (!user || user === null) getUserFromLocalStorage()
+    if (!user || user === null) getUserFromLocalStorage();
     if (user) getCharactersByUserId();
     if (user && classes.length === 0) getAllClasses();
   }, [id, user]);

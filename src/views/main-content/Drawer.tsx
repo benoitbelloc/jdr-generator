@@ -16,6 +16,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 import { DrawerHeader } from './MainContent';
 import { Character } from '../../types/Types';
+import { DarkModeContext } from '../../providers/darkmode-provider/DarkModeProvider';
 
 const drawerWidth = '100vw';
 
@@ -64,6 +65,7 @@ export default function DrawerComponent(props: { open: boolean, handleDrawerClos
   const theme = useTheme();
   const { characters, createOneCharacter, getCharactersByUserId } = React.useContext(CharactersContext);
   const {user} = React.useContext(UsersContext)  
+  const { darkMode } = React.useContext(DarkModeContext);
 
   React.useEffect(() => {
     if (user) getCharactersByUserId();
@@ -87,7 +89,7 @@ export default function DrawerComponent(props: { open: boolean, handleDrawerClos
         <Divider />
         <List>
             {characters && user && characters.map((item: Character) => (
-            <ListItem key={item.id} disablePadding sx={{ display: 'block', color: 'black' }} component={Link} to={"/character/" + item.id} onClick={handleDrawerClose}>
+            <ListItem key={item.id} disablePadding sx={{ display: 'block', color: darkMode ? 'white' : 'black' }} component={Link} to={"/character/" + item.id} onClick={handleDrawerClose}>
                 <ListItemButton
                 sx={{
                     minHeight: 48,

@@ -113,15 +113,14 @@ export default function Character() {
   return (
     <div>
       {user && character && <div className="character">
-      <CharacterMainData selectValue={selectValue} changeValue={changeValue} saveChange={saveChange} handleOpen={handleOpen} deleteCharacter={deleteCharacter} />
-      <div className="secondary-data">
-        <CharacterTraits changeValue={changeValue} saveChange={saveChange} />
-        <div className='competences'>
-          <CharacterCompetences changeValue={changeValue} saveChange={saveChange} />
-          <CharacterWeapons addWeapon={addWeapon} changeWeapon={changeWeapon} deleteWeapon={deleteWeapon} />
+        <CharacterMainData selectValue={selectValue} changeValue={changeValue} saveChange={saveChange} handleOpen={handleOpen} deleteCharacter={deleteCharacter} />
+        <div className="secondary-data">
+          <CharacterTraits changeValue={changeValue} saveChange={saveChange} />
+          <div className='competences'>
+            <CharacterCompetences changeValue={changeValue} saveChange={saveChange} />
+            <CharacterWeapons addWeapon={addWeapon} changeWeapon={changeWeapon} deleteWeapon={deleteWeapon} />
+          </div>
         </div>
-      </div>
-      <div style={{width: '100%', height: '20px', backgroundColor: 'white'}}></div>
       </div>}
       <CharacterAvatarModal open={open} changeValue={changeValue} handleClose={handleClose} saveChange={saveChange} />
     </div>

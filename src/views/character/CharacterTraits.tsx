@@ -6,7 +6,8 @@ import React from 'react';
 export default function CharacterTraits(props: CharacterTraitsAndCompetencesProps) {  
     const { changeValue, saveChange } = props;
     const { character } = React.useContext(CharactersContext);
-  return (
+
+    return (
     <div className='traits'>
         <div id='intellect' className='talents-trait'>
           <p className='trait-name'>Intelligence</p>
