@@ -17,12 +17,10 @@ export default function Character() {
   const id = location.pathname.split('/')[2];
   const { character, setCharacter, getOneCharacter, updateOneCharacter, removeCharacter, selectedClass } = React.useContext(CharactersContext);
   const { user } = React.useContext(UsersContext);
-  const [isMobile, setIsMobile] = React.useState(false);
 
   if (!character) getOneCharacter(id);
 
   React.useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
     getOneCharacter(id)
     console.log(selectedClass)
   }, [id, user])
@@ -46,7 +44,7 @@ export default function Character() {
         ...character.infos,
         [name]: value
       }      
-      newCharacter = {...character, infos}
+      newCharacter = {...character, infos}      
       setCharacter({...character, infos})
     } else if (className === 'description') {
       newCharacter = {...character, description: value}
@@ -69,8 +67,8 @@ export default function Character() {
     return newCharacter;
   }
 
-  const saveChange = (newCharacter: CharacterType) => {
-    if (newCharacter) {
+  const saveChange = (newCharacter: CharacterType) => {    
+    if (newCharacter && newCharacter.id) {      
       updateOneCharacter(newCharacter);
     } else {
       updateOneCharacter(character);

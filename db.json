@@ -4,7 +4,7 @@
       "id": 1,
       "userId": 1,
       "infos": {
-        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDxj6WBfaUpNnuL01tjl5FjexfgKaZ7D8RaGuwWI67hMIkT7Q6CtmsIw4g6xYV1Rdfb8&usqp=CAU",
+        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_knight_warrior_medieval_swordsman_sword_weapon-512.png",
         "name": "Bugs-Benny",
         "type": "Humain",
         "class": "Chevalier"
@@ -191,7 +191,35 @@
     },
     {
       "infos": {
-        "avatar": "https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg",
+        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_wizard_fantasy_magic_magician_sorcerer-512.png",
+        "name": "Zella",
+        "type": "Orque",
+        "class": "Mage"
+      },
+      "stats": {
+        "level": 1,
+        "hp": 14,
+        "mp": 37,
+        "atk": 6,
+        "def": 9
+      },
+      "talents": {
+        "physical": 5,
+        "intellect": 16,
+        "dexterity": 15,
+        "charism": 13
+      },
+      "weapons": [
+        "Baguette Magique",
+        "Runes"
+      ],
+      "description": "Zella est un Mage Orque. Il est sympathique. Il aime chanter au clair de lune. Il déteste les animaux sauvages. Il n'a jamais connu ses parents. Il veut devenir riche.",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "infos": {
+        "avatar": "https://www.dsppublications.com/assets/common/images/author_placeholder.png",
         "name": "Name",
         "type": "Type",
         "class": "Class"
@@ -212,7 +240,7 @@
       "weapons": [],
       "description": "",
       "userId": 1,
-      "id": 8
+      "id": 9
     }
   ],
   "users": [
@@ -289,7 +317,7 @@
     },
     {
       "name": "Chevalier",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDxj6WBfaUpNnuL01tjl5FjexfgKaZ7D8RaGuwWI67hMIkT7Q6CtmsIw4g6xYV1Rdfb8&usqp=CAU",
+      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_knight_warrior_medieval_swordsman_sword_weapon-512.png",
       "weapons": [
         "Hache",
         "Épée",

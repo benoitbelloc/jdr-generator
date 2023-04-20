@@ -5,7 +5,7 @@ import { Character, Class } from "../../types/Types";
 
 const baseCharacter: Character = {
     infos: {
-        avatar: 'https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg',
+        avatar: 'https://www.dsppublications.com/assets/common/images/author_placeholder.png',
         name: 'Name',
         type: 'Type',
         class: 'Class',
@@ -114,7 +114,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(characterData)
-            })
+            })            
             setCharacter(characterData)
             getCharactersByUserId();
             getOneClass(characterData.infos.class)
