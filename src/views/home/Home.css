@@ -16,11 +16,19 @@
 .cardImage{
     width: 100%;
     height: 200px;
+    background-color: white;
 }
 
 .cardMedia{
     text-decoration: none;
     color: black;
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .cards-container{
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
