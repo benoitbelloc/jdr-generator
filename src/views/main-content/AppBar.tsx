@@ -9,6 +9,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 import { AppBarProps } from '../../types/Types';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import './MainContent.css'
 
 const drawerWidth = '100vw';
 
@@ -52,6 +56,9 @@ export default function MainContent(props: MainContentProps) {
     navigate('/home');
   }
 
+  const theme = useTheme();
+  const colorMode = React.useContext(ColorModeContext);
+
   return (
     <AppBar position="fixed" sx={{backgroundColor: 'white', color: 'black'}} open={open}>
     <Toolbar sx={{color: 'black', textDecoration: 'none'}}>
@@ -73,7 +80,13 @@ export default function MainContent(props: MainContentProps) {
         {user && <Typography variant="h6" noWrap component="div" style={{marginLeft: '50px'}} onClick={logout}>
         Logout
         </Typography>}
+        <div className="darkmode">
+          <IconButton sx={{ ml: 1}} onClick={colorMode.toggleColorMode} color="inherit">
+          {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
+        </div>
     </Toolbar>
     </AppBar>
   );
 }
+export const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
