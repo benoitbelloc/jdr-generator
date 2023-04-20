@@ -188,59 +188,6 @@
       "description": "Alfonzo est un Rôdeur Elfe. Il est honnête. Il aime les promenades entre amis. Il déteste les chats (il est allergique). Il est orphelin. Il en est certain, un jour il sera célèbre.",
       "userId": 1,
       "id": 7
-    },
-    {
-      "infos": {
-        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_wizard_fantasy_magic_magician_sorcerer-512.png",
-        "name": "Zella",
-        "type": "Orque",
-        "class": "Mage"
-      },
-      "stats": {
-        "level": 1,
-        "hp": 14,
-        "mp": 37,
-        "atk": 6,
-        "def": 9
-      },
-      "talents": {
-        "physical": 5,
-        "intellect": 16,
-        "dexterity": 15,
-        "charism": 13
-      },
-      "weapons": [
-        "Baguette Magique",
-        "Runes"
-      ],
-      "description": "Zella est un Mage Orque. Il est sympathique. Il aime chanter au clair de lune. Il déteste les animaux sauvages. Il n'a jamais connu ses parents. Il veut devenir riche.",
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "infos": {
-        "avatar": "https://www.dsppublications.com/assets/common/images/author_placeholder.png",
-        "name": "Name",
-        "type": "Type",
-        "class": "Class"
-      },
-      "stats": {
-        "level": 0,
-        "hp": 0,
-        "mp": 0,
-        "atk": 0,
-        "def": 0
-      },
-      "talents": {
-        "physical": 0,
-        "intellect": 0,
-        "dexterity": 0,
-        "charism": 0
-      },
-      "weapons": [],
-      "description": "",
-      "userId": 1,
-      "id": 9
     }
   ],
   "users": [
