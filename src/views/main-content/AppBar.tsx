@@ -59,10 +59,8 @@ export default function MainContent(props: MainContentProps) {
   }
 
   const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
 
   const toggleMode = () => {
-    colorMode.toggleColorMode();
     toggleDarkMode();
   };
 
@@ -96,4 +94,3 @@ export default function MainContent(props: MainContentProps) {
     </AppBar>
   );
 }
-export const ColorModeContext = React.createContext({ toggleColorMode: () => {} });

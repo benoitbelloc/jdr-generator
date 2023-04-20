@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import Character from '../views/character/Character';
 import Home from '../views/home/Home';
 import Register from '../views/register/Register';
-import React from 'react';
 
 export default function Router() {
   const isMobile = window.innerWidth < 768;

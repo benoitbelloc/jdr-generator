@@ -5,9 +5,8 @@ import UsersProvider from './providers/users-provider/UsersProvider'
 import Router from './router/Router'
 import MainContent from './views/main-content/MainContent'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { ColorModeContext } from './views/main-content/AppBar'
 import DarkModeProvider from './providers/darkmode-provider/DarkModeProvider'
-
+import { ColorModeContext } from './providers/darkmode-provider/DarkModeProvider'
 
 function App() {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light');
