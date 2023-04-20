@@ -15,3 +15,20 @@
     padding: 10px;
     transition: all 0.2s ease-in-out;
 }
+
+.darkmode {
+    margin-left: 70%;
+}
+
+@media (max-width: 800px) {
+    .header-link{
+        text-decoration: none;
+    color: #fff;
+    margin: 0 0px;
+    padding: 0px;
+    transition: all 0.2s ease-in-out;
+    }
+    .darkmode {
+        margin-left: 0%;
+    }
+}
