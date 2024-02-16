@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useLocation, useNavigate } from "react-router-dom";
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
-import { AppBarProps } from '../../types/Types';
+import { AppBarProps } from '../../interfaces/Types';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';

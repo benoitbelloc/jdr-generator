@@ -1,4 +1,4 @@
-import { CharacterWeaponsProps } from '../../types/Types';
+import { CharacterWeaponsProps } from '../../interfaces/Types';
 import './Character.css'
 import AddIcon from '@mui/icons-material/Add';
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';

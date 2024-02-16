@@ -8,7 +8,7 @@ import CharacterTraits from './CharacterTraits';
 import CharacterCompetences from './CharacterCompetences';
 import CharacterWeapons from './CharacterWeapons';
 import CharacterAvatarModal from './CharacterAvatarModal';
-import { Character as CharacterType, CharacterInfos, CharacterStats, CharacterTalents } from '../../types/Types';
+import { Character as CharacterType, CharacterInfos, CharacterStats, CharacterTalents } from '../../interfaces/Types';
 
 export default function Character() {  
   const [open, setOpen] = React.useState(false);

@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
-import { User } from "../../types/Types";
+import { User } from "../../interfaces/Types";
 
 export const UsersContext = React.createContext<any>([]);
 

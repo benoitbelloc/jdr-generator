@@ -79,7 +79,7 @@ type MaxMin = {
 }
 
 export type Class = {
-  id: number,
+  id: string,
   name: string,
   url: string,
   weapons: string[],

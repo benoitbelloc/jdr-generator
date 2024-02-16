@@ -1,7 +1,8 @@
 import React from "react";
 import { UsersContext } from "../users-provider/UsersProvider";
 import { useNavigate } from "react-router-dom";
-import { Character, Class } from "../../types/Types";
+import { Character, Class } from "../../interfaces/Types";
+import { classesList } from "../../interfaces/Classes";
 
 const baseCharacter: Character = {
     infos: {
@@ -80,26 +81,15 @@ export const CharactersContext = React.createContext<any>([]);
 export default function CharactersProvider ({children}: {children: React.ReactNode}) {
     const [characters, setCharacters] = React.useState<Character[]>([]);
     const [character, setCharacter] = React.useState<Character | null>(null);
-    const [classes, setClasses] = React.useState<Class[]>([]);
     const [selectedClass, setSelectedClass] = React.useState<Class | null>(null);
     const {user} = React.useContext(UsersContext)  
     const navigate = useNavigate();
-
-    const getAllClasses = async () => {
-        try {
-            const response = await fetch('http://localhost:3000/classes')
-            const data = await response.json()
-            setClasses(data)            
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    const classes: Class[] = classesList;
 
     const getOneClass = async (name: string) => {
-        try {            
-            const response = await fetch(`http://localhost:3000/classes?name=${name}`)
-            const data = await response.json()            
-            setSelectedClass(data[0])
+        try {
+            const oneClass = classes.find((c: Class) => c.name === name) || null;      
+            setSelectedClass(oneClass)
         } catch (error) {
             console.log(error);
         }
@@ -187,9 +177,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
             const response = await fetch('https://random-data-api.com/api/v2/users')
             const data = await response.json();
             const name = data.first_name;
-            const classes = await fetch(`http://localhost:3000/classes`)
-            const classesData = await classes.json()
-            const randomClass = classesData[Math.floor(Math.random() * classesData.length)]
+            const randomClass = classesList[Math.floor(Math.random() * classesList.length)]
             
             const newCharacter: Character = {
                 id: character.id,
@@ -233,7 +221,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
     }
 
     return (
-        <CharactersContext.Provider value={{ characters, character, classes, selectedClass, setCharacter, getAllClasses, getOneCharacter, updateOneCharacter, createOneCharacter, removeCharacter, getCharactersByUserId, createRandomisedCharacter }}>
+        <CharactersContext.Provider value={{ characters, character, classes, selectedClass, setCharacter, getOneCharacter, updateOneCharacter, createOneCharacter, removeCharacter, getCharactersByUserId, createRandomisedCharacter }}>
             {children}
         </CharactersContext.Provider>
     )

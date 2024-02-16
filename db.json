@@ -1,7 +1,7 @@
 {
   "characters": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "infos": {
         "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_knight_warrior_medieval_swordsman_sword_weapon-512.png",
@@ -30,7 +30,7 @@
       "description": "Benny is a human knight. He is a good guy. But he is not a hero. His favorite food is potato chips. He hates his brother."
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 2,
       "infos": {
         "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgfAOQwDPH5dFMc91Cx20tLUQdMBVJdzDpg36zml-J6NaLQEJp8g190BZcqIPqZObwD1E&usqp=CAU",
@@ -81,7 +81,7 @@
       ],
       "description": "Charles-Hubert est un sorcier avec des statistiques de tank.",
       "userId": 1,
-      "id": 3
+      "id": "3"
     },
     {
       "infos": {
@@ -106,32 +106,35 @@
       "weapons": [],
       "description": "Gentil et c'est déjà pas mal...",
       "userId": 3,
-      "id": 4
+      "id": "4"
     },
     {
       "infos": {
-        "avatar": "https://as1.ftcdn.net/jpg/03/91/19/22/220_F_391192211_2w5pQpFV1aozYQhcIw3FqA35vuTxJKrB.jpg",
-        "name": "Name",
-        "type": "Type",
-        "class": "Class"
+        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_knight_warrior_medieval_swordsman_sword_weapon-512.png",
+        "name": "Dionna",
+        "type": "Nain",
+        "class": "Chevalier"
       },
       "stats": {
-        "level": 0,
-        "hp": 0,
-        "mp": 0,
-        "atk": 0,
-        "def": 0
+        "level": 1,
+        "hp": 29,
+        "mp": 1,
+        "atk": 8,
+        "def": 8
       },
       "talents": {
-        "physical": 0,
-        "intellect": 0,
-        "dexterity": 0,
-        "charism": 0
+        "physical": 14,
+        "intellect": 14,
+        "dexterity": 14,
+        "charism": 7
       },
-      "weapons": [],
-      "description": "",
+      "weapons": [
+        "Hache",
+        "Glaive"
+      ],
+      "description": "Dionna est un Chevalier Nain. Il est intelligent. Il aime les promenades entre amis. Il déteste les animaux sauvages. Il a été élevé par ses grands-parents. Il veut devenir riche.",
       "userId": 5,
-      "id": 5
+      "id": "5"
     },
     {
       "infos": {
@@ -159,7 +162,7 @@
       ],
       "description": "Zackary est un Druide Orque. Il est intelligent. Il aime nager dans le lac près de chez lui. Il déteste les sandwiches au fromage. Il a été élevé par sa mère. Il en est certain, un jour il sera célèbre.",
       "userId": 1,
-      "id": 6
+      "id": "6"
     },
     {
       "infos": {
@@ -187,422 +190,61 @@
       ],
       "description": "Alfonzo est un Rôdeur Elfe. Il est honnête. Il aime les promenades entre amis. Il déteste les chats (il est allergique). Il est orphelin. Il en est certain, un jour il sera célèbre.",
       "userId": 1,
-      "id": 7
+      "id": "7"
+    },
+    {
+      "id": "98ff",
+      "infos": {
+        "avatar": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-2/340/character_rpg_blade_assassin_killer_warrior_ninja-512.png",
+        "name": "Jacklyn",
+        "type": "Gobelin",
+        "class": "Assassin"
+      },
+      "stats": {
+        "level": 1,
+        "hp": 23,
+        "mp": 1,
+        "atk": 8,
+        "def": 8
+      },
+      "talents": {
+        "physical": 12,
+        "intellect": 14,
+        "dexterity": 12,
+        "charism": 8
+      },
+      "weapons": [
+        "Shuriken",
+        "Epée"
+      ],
+      "description": "Jacklyn est un Assassin Gobelin. Il est vénal. Il aime les promenades entre amis. Il déteste courir. Il a été élevé par son père. Il aimerait construire une maison.",
+      "userId": "5"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "bob"
     },
     {
       "username": "viviane",
-      "id": 2
+      "id": "2"
     },
     {
       "username": "beuhbe",
-      "id": 3
+      "id": "3"
     },
     {
       "username": "lionel",
-      "id": 4
+      "id": "4"
     },
     {
       "username": "Test",
-      "id": 5
-    }
-  ],
-  "classes": [
-    {
-      "name": "Barbare",
-      "url": "https://cdn-icons-png.flaticon.com/512/2822/2822366.png",
-      "weapons": [
-        "Hache",
-        "Marteau",
-        "Épée",
-        "Lance",
-        "Hallebarde",
-        "Glaive",
-        "Masse"
-      ],
-      "stats": {
-        "hp": {
-          "min": 28,
-          "max": 35
-        },
-        "mp": {
-          "min": 0,
-          "max": 5
-        },
-        "atk": {
-          "min": 5,
-          "max": 10
-        },
-        "def": {
-          "min": 5,
-          "max": 10
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 10,
-          "max": 15
-        },
-        "intellect": {
-          "min": 5,
-          "max": 10
-        },
-        "dexterity": {
-          "min": 5,
-          "max": 15
-        },
-        "charism": {
-          "min": 0,
-          "max": 10
-        }
-      }
+      "id": "5"
     },
     {
-      "name": "Chevalier",
-      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_knight_warrior_medieval_swordsman_sword_weapon-512.png",
-      "weapons": [
-        "Hache",
-        "Épée",
-        "Lance",
-        "Arc",
-        "Arbalète",
-        "Bouclier",
-        "Glaive"
-      ],
-      "stats": {
-        "hp": {
-          "min": 25,
-          "max": 30
-        },
-        "mp": {
-          "min": 0,
-          "max": 10
-        },
-        "atk": {
-          "min": 5,
-          "max": 10
-        },
-        "def": {
-          "min": 5,
-          "max": 10
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 10,
-          "max": 15
-        },
-        "intellect": {
-          "min": 10,
-          "max": 15
-        },
-        "dexterity": {
-          "min": 5,
-          "max": 15
-        },
-        "charism": {
-          "min": 5,
-          "max": 15
-        }
-      }
-    },
-    {
-      "name": "Druide",
-      "url": "https://cdn-icons-png.flaticon.com/512/2822/2822322.png",
-      "weapons": [
-        "Lance",
-        "Bâton",
-        "Baguette Magique",
-        "Faucille",
-        "Dague",
-        "Runes",
-        "Potions"
-      ],
-      "stats": {
-        "hp": {
-          "min": 15,
-          "max": 20
-        },
-        "mp": {
-          "min": 25,
-          "max": 30
-        },
-        "atk": {
-          "min": 5,
-          "max": 10
-        },
-        "def": {
-          "min": 5,
-          "max": 10
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 0,
-          "max": 10
-        },
-        "intellect": {
-          "min": 12,
-          "max": 18
-        },
-        "dexterity": {
-          "min": 12,
-          "max": 18
-        },
-        "charism": {
-          "min": 12,
-          "max": 18
-        }
-      }
-    },
-    {
-      "name": "Mage",
-      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_wizard_fantasy_magic_magician_sorcerer-512.png",
-      "weapons": [
-        "Bâton",
-        "Baguette Magique",
-        "Grimoire",
-        "Dague",
-        "Sortilèges",
-        "Runes",
-        "Potions"
-      ],
-      "stats": {
-        "hp": {
-          "min": 10,
-          "max": 15
-        },
-        "mp": {
-          "min": 35,
-          "max": 40
-        },
-        "atk": {
-          "min": 5,
-          "max": 10
-        },
-        "def": {
-          "min": 5,
-          "max": 10
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 0,
-          "max": 10
-        },
-        "intellect": {
-          "min": 12,
-          "max": 18
-        },
-        "dexterity": {
-          "min": 12,
-          "max": 18
-        },
-        "charism": {
-          "min": 12,
-          "max": 18
-        }
-      }
-    },
-    {
-      "name": "Prêtre",
-      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_fantasy_priest_mage_wizard_magic-512.png",
-      "weapons": [
-        "Grimoire",
-        "Bâton",
-        "Baguette Magique",
-        "Potions",
-        "Dague",
-        "Runes",
-        "Sortilèges"
-      ],
-      "stats": {
-        "hp": {
-          "min": 20,
-          "max": 25
-        },
-        "mp": {
-          "min": 10,
-          "max": 15
-        },
-        "atk": {
-          "min": 5,
-          "max": 10
-        },
-        "def": {
-          "min": 5,
-          "max": 10
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 0,
-          "max": 10
-        },
-        "intellect": {
-          "min": 10,
-          "max": 20
-        },
-        "dexterity": {
-          "min": 5,
-          "max": 15
-        },
-        "charism": {
-          "min": 10,
-          "max": 20
-        }
-      }
-    },
-    {
-      "name": "Rôdeur",
-      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-1/340/character_rpg_hunter_crossbow_hunt_weapon_archery-512.png",
-      "weapons": [
-        "Arc",
-        "Arbalète",
-        "Dague",
-        "Glaive",
-        "Hachette",
-        "Shuriken"
-      ],
-      "stats": {
-        "hp": {
-          "min": 15,
-          "max": 25
-        },
-        "mp": {
-          "min": 0,
-          "max": 10
-        },
-        "atk": {
-          "min": 5,
-          "max": 10
-        },
-        "def": {
-          "min": 5,
-          "max": 10
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 5,
-          "max": 15
-        },
-        "intellect": {
-          "min": 10,
-          "max": 15
-        },
-        "dexterity": {
-          "min": 12,
-          "max": 18
-        },
-        "charism": {
-          "min": 12,
-          "max": 18
-        }
-      }
-    },
-    {
-      "name": "Assassin",
-      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-2/340/character_rpg_blade_assassin_killer_warrior_ninja-512.png",
-      "weapons": [
-        "Dague",
-        "Poignard",
-        "Couteau",
-        "Epée",
-        "Poison",
-        "Shuriken",
-        "Hachette"
-      ],
-      "stats": {
-        "hp": {
-          "min": 20,
-          "max": 25
-        },
-        "mp": {
-          "min": 0,
-          "max": 10
-        },
-        "atk": {
-          "min": 5,
-          "max": 10
-        },
-        "def": {
-          "min": 5,
-          "max": 10
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 5,
-          "max": 15
-        },
-        "intellect": {
-          "min": 10,
-          "max": 15
-        },
-        "dexterity": {
-          "min": 10,
-          "max": 15
-        },
-        "charism": {
-          "min": 5,
-          "max": 15
-        }
-      }
-    },
-    {
-      "name": "Voleur",
-      "url": "https://cdn2.iconfinder.com/data/icons/avatar-classes-role-playing-game-2/340/character_rpg_thief_crime_knife_bandit_weapon-512.png",
-      "weapons": [
-        "Dague",
-        "Poignard",
-        "Couteau",
-        "Epée",
-        "Poison",
-        "Shuriken",
-        "Hachette"
-      ],
-      "stats": {
-        "hp": {
-          "min": 20,
-          "max": 25
-        },
-        "mp": {
-          "min": 0,
-          "max": 10
-        },
-        "atk": {
-          "min": 5,
-          "max": 10
-        },
-        "def": {
-          "min": 5,
-          "max": 10
-        }
-      },
-      "talents": {
-        "physical": {
-          "min": 5,
-          "max": 15
-        },
-        "intellect": {
-          "min": 10,
-          "max": 15
-        },
-        "dexterity": {
-          "min": 10,
-          "max": 15
-        },
-        "charism": {
-          "min": 5,
-          "max": 15
-        }
-      }
+      "id": "0dec",
+      "username": "test"
     }
   ]
 }

@@ -15,7 +15,7 @@ import { CharactersContext } from '../../providers/characters-provider/Character
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 import { DrawerHeader } from './MainContent';
-import { Character } from '../../types/Types';
+import { Character } from '../../interfaces/Types';
 import { DarkModeContext } from '../../providers/darkmode-provider/DarkModeProvider';
 
 const drawerWidth = '100vw';

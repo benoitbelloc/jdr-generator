@@ -7,7 +7,6 @@ import { CharactersContext } from '../../providers/characters-provider/Character
 import { UsersContext } from '../../providers/users-provider/UsersProvider';
 import AppBar from './AppBar';
 import DrawerComponent from './Drawer';
-import { DarkModeContext } from '../../providers/darkmode-provider/DarkModeProvider';
 
 export const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -21,7 +20,7 @@ export const DrawerHeader = styled('div')(({ theme }) => ({
 export default function MainContent() {
   const location = useLocation();
   const id = location.pathname.split('/')[2];
-  const { getCharactersByUserId, classes, getAllClasses } = React.useContext(CharactersContext);
+  const { getCharactersByUserId } = React.useContext(CharactersContext);
   const { user, getUserFromLocalStorage } = React.useContext(UsersContext) 
   const [open, setOpen] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
@@ -30,7 +29,6 @@ export default function MainContent() {
     setIsMobile(window.innerWidth < 768);
     if (!user || user === null) getUserFromLocalStorage();
     if (user) getCharactersByUserId();
-    if (user && classes.length === 0) getAllClasses();
   }, [id, user]);
 
   const handleDrawerOpen = () => {

@@ -1,4 +1,4 @@
-import { CharacterAvatarModalProps } from '../../types/Types';
+import { CharacterAvatarModalProps } from '../../interfaces/Types';
 import './Character.css'
 import { Box, Button, Modal, Typography } from '@mui/material';
 

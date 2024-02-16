@@ -1,4 +1,4 @@
-import { CharacterTraitsAndCompetencesProps } from '../../types/Types';
+import { CharacterTraitsAndCompetencesProps } from '../../interfaces/Types';
 import './Character.css'
 import { CharactersContext } from '../../providers/characters-provider/CharactersProvider';
 import React from 'react';

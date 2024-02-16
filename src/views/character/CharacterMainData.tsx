@@ -1,5 +1,5 @@
 import React from 'react';
-import { CharacterMainDataProps, Class } from '../../types/Types';
+import { CharacterMainDataProps, Class } from '../../interfaces/Types';
 import './Character.css'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { CharactersContext, types } from '../../providers/characters-provider/CharactersProvider';
