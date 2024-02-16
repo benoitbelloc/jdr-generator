@@ -1,5 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
+import { SERVER_URL } from "../../interfaces/constants";
 import { User } from "../../interfaces/Types";
 
 export const UsersContext = React.createContext<any>([]);
@@ -10,7 +11,7 @@ export default function UsersProvider ({children}: {children: React.ReactNode}){
 
     const login = async (username: string) => {
         try {
-            const response = await fetch(`http://localhost:3000/users?username=${username}`)
+            const response = await fetch(`${SERVER_URL}users?username=${username}`)
             const data = await response.json();
             let idForLocal = {};
             if (data.length > 1) {
@@ -19,7 +20,7 @@ export default function UsersProvider ({children}: {children: React.ReactNode}){
                 setUser(data[0]);
                 idForLocal = data[0].username;
             } else if (data.length === 0) {
-                await fetch(`http://localhost:3000/users?username=${username}`, 
+                await fetch(`${SERVER_URL}users?username=${username}`, 
                 {
                     method: "POST",
                     headers: {
@@ -27,7 +28,7 @@ export default function UsersProvider ({children}: {children: React.ReactNode}){
                     },
                     body: JSON.stringify({username})
                 })
-                const responseAfterCreate = await fetch(`http://localhost:3000/users?username=${username}`)
+                const responseAfterCreate = await fetch(`${SERVER_URL}users?username=${username}`)
                 const dataAfterCreate = await responseAfterCreate.json();
                 setUser(dataAfterCreate[0]);
                 idForLocal = dataAfterCreate[0].username;
@@ -49,7 +50,7 @@ export default function UsersProvider ({children}: {children: React.ReactNode}){
 
     const getUser = async (username: string) => {
         try {
-            const response = await fetch(`http://localhost:3000/users?username=${username}`)
+            const response = await fetch(`${SERVER_URL}users?username=${username}`)
             const data = await response.json()            
             setUser(data[0])
         } catch (error) {

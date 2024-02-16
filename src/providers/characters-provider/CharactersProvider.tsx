@@ -2,7 +2,7 @@ import React from "react";
 import { UsersContext } from "../users-provider/UsersProvider";
 import { useNavigate } from "react-router-dom";
 import { Character, Class } from "../../interfaces/Types";
-import { classesList } from "../../interfaces/Classes";
+import { SERVER_URL, classesList } from "../../interfaces/constants";
 
 const baseCharacter: Character = {
     infos: {
@@ -97,7 +97,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
 
     const updateOneCharacter = async (characterData: Character) => {
         try {
-            await fetch(`http://localhost:3000/characters/${characterData.id}`, 
+            await fetch(`${SERVER_URL}characters/${characterData.id}`, 
             {
                 method: "PATCH",
                 headers: {
@@ -115,7 +115,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
 
     const removeCharacter = async (id: string) => {
         try {
-            await fetch(`http://localhost:3000/characters/${id}`, 
+            await fetch(`${SERVER_URL}characters/${id}`, 
             {
                 method: "DELETE",
             })
@@ -130,7 +130,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
 
     const getOneCharacter = async (id: string) => {
         try {
-            const response = await fetch(`http://localhost:3000/characters/${id}`)
+            const response = await fetch(`${SERVER_URL}characters/${id}`)
             const data = await response.json()
             setCharacter(data)                        
             getOneClass(data.infos.class)
@@ -143,7 +143,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
         if (!user.id) return alert('You must be logged in to create a character');
         baseCharacter.userId = user.id;
         try {
-            await fetch(`http://localhost:3000/characters`, 
+            await fetch(`${SERVER_URL}characters`, 
             {
                 method: "POST",
                 headers: {
@@ -162,7 +162,7 @@ export default function CharactersProvider ({children}: {children: React.ReactNo
 
     const getCharactersByUserId = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/characters?userId=${user.id}`)
+            const response = await fetch(`${SERVER_URL}characters?userId=${user.id}`)
             const data = await response.json()
             setCharacters(data)
         } catch (error) {

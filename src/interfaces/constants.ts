@@ -1,3 +1,5 @@
+export const SERVER_URL = "https://jdr-g-server.onrender.com/"
+
 export const classesList = [
     {
       "name": "Barbare",
